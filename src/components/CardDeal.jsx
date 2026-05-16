@@ -1,4 +1,4 @@
-import React from "react";
+
 //import { card } from "../assets";
 import styles, { layout } from "../style";
 import Button from "./Button";
@@ -16,7 +16,7 @@ function CardDeal() {
         <Button styles="mt-10" />
       </div>
       <div className={layout.sectionImg}>
-        <img src={card} alt="card" className="w-[100%] h-[100%]" />
+        {/* <img src={card} alt="card" className="w-[100%] h-[100%]" /> */}
       </div>
     </section>
   );

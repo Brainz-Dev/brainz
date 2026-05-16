@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import styles from "../style";
 import axios from "axios";
 import { ToastContainer, toast, Bounce } from "react-toastify";
 import { Vortex } from "react-loader-spinner";
 import "react-toastify/dist/ReactToastify.css";
+
 function FeedBackCard() {
   const [isClicked, setClicked] = useState(false);
 
+  // ── API LOGIC — unchanged ──────────────────────────────────────────────────
   const showToast = (message) => {
     toast(message, {
       position: "top-center",
@@ -20,6 +21,7 @@ function FeedBackCard() {
       transition: Bounce,
     });
   };
+
   const sentMail = async (e) => {
     e.preventDefault();
     const btn = document.getElementById("submit-btn");
@@ -34,11 +36,8 @@ function FeedBackCard() {
     btn.disabled = true;
     const options = {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+      headers: { "Content-Type": "application/json" },
     };
-
     axios
       .post(
         "https://brainz-server.onrender.com/sentmail",
@@ -52,7 +51,6 @@ function FeedBackCard() {
           document.getElementById("subject").value = "";
           document.getElementById("message").value = "";
         } else showToast("Something went wrong, please try again later");
-
         setClicked(false);
       })
       .catch((er) => {
@@ -61,67 +59,77 @@ function FeedBackCard() {
         setClicked(false);
       });
   };
+  // ── END API LOGIC ──────────────────────────────────────────────────────────
 
   return (
-    <div
-      id="contact-form"
-      className=" flex justify-between flex-col px-10 py-12 rounded-[20px] w-full  md:mr-10 sm:mr-5 mr-0 my-5 feedback-card"
-    >
-      <h4 className={`${styles.heading2} text-cyan-200 font-poppins`}>
-        Write to us
+    <div id="contact-form" className="glass-card rounded-2xl px-8 py-9 w-full">
+      <h4 className="font-poppins font-bold text-[24px] text-white mb-7 leading-tight">
+        Send us a message
       </h4>
-      {/* <label htmlFor="name" className="block text-yellow-200 ">
-        Name
-      </label>
-      <input
-        type="text"
-        id="name"
-        className="mt-1 p-2 border bg-black-gradient rounded-md w-full border-stone-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
-        placeholder="Enter your name"
-      /> */}
-      <label htmlFor="email" className="block text-slate-200">
-        Email
-      </label>
-      <input
-        type="text"
-        id="email"
-        className="mt-1 p-2 border bg-black-gradient rounded-md w-full border-stone-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
-        placeholder="Enter your Email"
-      />
-      <label htmlFor="subject" className="block text-slate-200 ">
-        Subject
-      </label>
-      <input
-        type="text"
-        id="subject"
-        className="mt-1 p-2 border bg-black-gradient rounded-md w-full border-stone-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
-        placeholder="Enter your Subject"
-      />
-      <label htmlFor="message" className="block text-slate-200 ">
-        Message
-      </label>
-      <textarea
-        type="text"
-        id="message"
-        className="mt-1 p-2 border bg-black-gradient rounded-md w-full border-stone-800 focus:outline-none focus:ring-2 focus:ring-indigo-500 text-white"
-        placeholder="Enter your Message"
-      />
-      <button
-        type="button"
-        id="submit-btn"
-        className={`py-4 px-6 mt-4 bg-blue-gradient flex justify-center font-poppins font-medium text-[22px] text-primary outline-none rounded-[10px]`}
-        onClick={sentMail}
-      >
-        Submit
-        <Vortex
-          visible={isClicked}
-          height="50"
-          colors={["red", "green", "blue", "yellow", "orange", "purple"]}
-          width="50"
-          wrapperStyle={{}}
-          wrapperClass="ml-4 mt-[-9px] "
-        />
-      </button>
+
+      <div className="flex flex-col gap-5">
+        <div>
+          <label
+            htmlFor="email"
+            className="block font-poppins text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-2"
+          >
+            Email address
+          </label>
+          <input
+            type="email"
+            id="email"
+            className="input-glow w-full rounded-xl px-4 py-3 font-poppins text-[15px]"
+            placeholder="you@company.com"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="subject"
+            className="block font-poppins text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-2"
+          >
+            Subject
+          </label>
+          <input
+            type="text"
+            id="subject"
+            className="input-glow w-full rounded-xl px-4 py-3 font-poppins text-[15px]"
+            placeholder="What's this about?"
+          />
+        </div>
+
+        <div>
+          <label
+            htmlFor="message"
+            className="block font-poppins text-[12px] font-semibold text-slate-400 uppercase tracking-wider mb-2"
+          >
+            Message
+          </label>
+          <textarea
+            id="message"
+            rows={5}
+            className="input-glow w-full rounded-xl px-4 py-3 font-poppins text-[15px] resize-none"
+            placeholder="Tell us about your project, your stack, and what you want to achieve..."
+          />
+        </div>
+
+        <button
+          type="button"
+          id="submit-btn"
+          onClick={sentMail}
+          className="w-full bg-brand-gradient font-poppins font-semibold text-[15px] text-white py-4 rounded-xl flex justify-center items-center gap-3 hover:opacity-90 hover:shadow-glow transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed mt-1"
+        >
+          {isClicked ? "Sending…" : "Send Message →"}
+          <Vortex
+            visible={isClicked}
+            height="22"
+            width="22"
+            colors={["#fff", "#c4b5fd", "#e879f9", "#fff", "#c4b5fd", "#e879f9"]}
+            wrapperStyle={{}}
+            wrapperClass=""
+          />
+        </button>
+      </div>
 
       <ToastContainer />
     </div>

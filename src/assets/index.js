@@ -1,4 +1,5 @@
 import logo from "./logo.svg";
+import brandLogo from "./website-logo-no-bg.png";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
@@ -13,6 +14,7 @@ import zoho from "./zoho.png";
 import cross from "./close-circle.svg";
 export {
   logo,
+  brandLogo,
   send,
   shield,
   star,

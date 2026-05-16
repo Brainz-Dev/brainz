@@ -1,13 +1,11 @@
-import React from "react";
-
 function Button({ style }) {
   return (
-    <button
-      type="button"
-      className={`py-4 px-6 bg-blue-gradient font-poppins font-medium text-[18px] text-primary outline-none ${style} rounded-[10px]`}
+    <a
+      href="#contact"
+      className={`font-poppins font-semibold text-[15px] text-white bg-brand-gradient px-7 py-3.5 rounded-xl hover:opacity-90 hover:shadow-glow-sm transition-all duration-200 inline-block ${style || ""}`}
     >
-      <a href={`#contact-form`}>Get Started</a>
-    </button>
+      Get Started →
+    </a>
   );
 }
 
