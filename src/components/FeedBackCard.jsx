@@ -40,7 +40,7 @@ function FeedBackCard() {
     };
     axios
       .post(
-        "https://brainz-server.onrender.com/sentmail",
+        "https://api.brainz-dev.com/sentmail",
         { email, subject, message },
         options
       )
