@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { close, menu } from "../assets";
 import { navLinks } from "../constants";
+import brainzLogo from "../assets/brainz-logo.png";
 
 function Navbar() {
   const [open, setOpen] = useState(false);
@@ -17,7 +18,7 @@ function Navbar() {
         whileTap={{ scale: 0.97 }}
         transition={{ type: "spring", stiffness: 400, damping: 22 }}
       >
-        <img src="/logo-icon.svg" alt="Brainz-Dev" className="w-9 h-9" />
+        <img src={brainzLogo} alt="Brainz-Dev" className="w-9 h-9 object-contain" />
         <span className="font-poppins font-bold text-[20px] text-white tracking-tight">
           Brainz<span className="text-gradient">-Dev</span>
         </span>

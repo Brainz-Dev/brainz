@@ -1,10 +1,8 @@
-import logo from "./logo.svg";
-import brandLogo from "./website-logo-no-bg.png";
+import close from "./close.svg";
 import send from "./Send.svg";
 import shield from "./Shield.svg";
 import star from "./Star.svg";
 import menu from "./menu.svg";
-import close from "./close.svg";
 import arrowUp from "./arrow-up.svg";
 import saas from "./saas.png";
 import jira from "./jira.png";
@@ -13,13 +11,10 @@ import shopify from "./shopify.png";
 import zoho from "./zoho.png";
 import cross from "./close-circle.svg";
 export {
-  logo,
-  brandLogo,
   send,
   shield,
   star,
   menu,
-  close,
   arrowUp,
   saas,
   jira,
@@ -27,4 +22,5 @@ export {
   shopify,
   zoho,
   cross,
+  close,
 };
