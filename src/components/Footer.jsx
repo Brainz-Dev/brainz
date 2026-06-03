@@ -10,11 +10,11 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { label: "Home",          href: "#home" },
-  { label: "Services",      href: "#services" },
-  { label: "Our Process",   href: "#process" },
-  { label: "Testimonials",  href: "#testimonials" },
-  { label: "Contact",       href: "#contact" },
+  { label: "Home", href: "#home" },
+  { label: "Services", href: "#services" },
+  { label: "Our Process", href: "#process" },
+  { label: "Testimonials", href: "#testimonials" },
+  { label: "Contact", href: "#contact" },
 ];
 
 function FooterLink({ label, href }) {
@@ -44,7 +44,11 @@ function Footer() {
         {/* Brand column */}
         <div className="md:col-span-1">
           <a href="#home" className="flex items-center gap-2.5 mb-4">
-            <img src={brainzLogo} alt="Brainz-Dev" className="w-8 h-8 object-contain" />
+            <img
+              src={brainzLogo}
+              alt="Brainz-Dev"
+              className="w-8 h-8 object-contain"
+            />
             <span className="font-poppins font-bold text-[18px] text-white tracking-tight">
               Brainz<span className="text-gradient">-Dev</span>
             </span>
@@ -84,7 +88,11 @@ function Footer() {
           </h4>
           <ul className="flex flex-col gap-3">
             {companyLinks.map((link) => (
-              <FooterLink key={link.label} label={link.label} href={link.href} />
+              <FooterLink
+                key={link.label}
+                label={link.label}
+                href={link.href}
+              />
             ))}
           </ul>
         </div>
@@ -110,6 +118,14 @@ function Footer() {
               >
                 Terms &amp; Conditions
               </Link>
+            </li>
+            <li>
+              <a
+                href="mailto:support@brainz-dev.com"
+                className="font-poppins text-[14px] text-slate-500 hover:text-white transition-colors duration-200"
+              >
+                support@brainz-dev.com
+              </a>
             </li>
           </ul>
         </div>
