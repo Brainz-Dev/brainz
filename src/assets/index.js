@@ -5,10 +5,11 @@ import star from "./Star.svg";
 import menu from "./menu.svg";
 import arrowUp from "./arrow-up.svg";
 import saas from "./saas.png";
-import jira from "./jira.png";
+// import jira from "./jira.png";
+import monday from "./monday.svg";
 import fw from "./Freshworks.svg";
-import shopify from "./shopify.png";
-import zoho from "./zoho.png";
+import shopify from "./shopify.svg";
+import zoho from "./zoho.svg";
 import cross from "./close-circle.svg";
 export {
   send,
@@ -17,7 +18,8 @@ export {
   menu,
   arrowUp,
   saas,
-  jira,
+  // jira,
+  monday,
   fw,
   shopify,
   zoho,

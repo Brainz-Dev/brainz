@@ -1,16 +1,30 @@
 import { Link } from "react-router-dom";
 import TermsAndConditions from "../components/TermsAndConditions";
+import SEOHead from "../components/SEOHead";
+
+const breadcrumbs = [
+  { name: "Home",                path: "/" },
+  { name: "Terms & Conditions",  path: "/terms" },
+];
 
 function TermsPage() {
   return (
     <div className="min-h-screen bg-primary overflow-x-hidden relative">
-      <div className="hero-grid-bg fixed inset-0 pointer-events-none z-0" />
+      <SEOHead
+        title="Terms & Conditions"
+        description="Read the Terms and Conditions for using Brainz-Dev's website, products, and software development services."
+        canonical="/terms"
+        noindex={false}
+        breadcrumbs={breadcrumbs}
+      />
+
+      <div className="hero-grid-bg fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
 
       {/* Minimal nav */}
-      <header className="sticky top-0 z-50 navbar-glass">
+      <header className="sticky top-0 z-50 navbar-glass" role="banner">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src="/logo-icon.svg" alt="Brainz-Dev" className="w-9 h-9" />
+            <img src="/brainz.png" alt="Brainz-Dev" className="w-9 h-9 object-contain" />
             <span className="font-poppins font-bold text-[20px] text-white tracking-tight">
               Brainz<span className="text-gradient">-Dev</span>
             </span>
@@ -19,8 +33,9 @@ function TermsPage() {
           <Link
             to="/"
             className="font-poppins text-[13px] text-slate-400 hover:text-white flex items-center gap-1.5 transition-colors duration-200"
+            aria-label="Back to home page"
           >
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
             </svg>
             Back to home
@@ -28,25 +43,27 @@ function TermsPage() {
         </div>
       </header>
 
-      <main className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 py-16 sm:py-24">
-        <div className="glass-card rounded-2xl px-6 sm:px-10 py-10">
+      <main id="main-content" className="relative z-10 max-w-3xl mx-auto px-6 sm:px-10 py-16 sm:py-24" role="main">
+        <article className="glass-card rounded-2xl px-6 sm:px-10 py-10">
           <TermsAndConditions />
-        </div>
+        </article>
       </main>
 
       {/* Minimal footer */}
-      <footer className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 py-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3">
+      <footer className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 py-8 border-t border-white/[0.06] flex flex-col sm:flex-row items-center justify-between gap-3" role="contentinfo">
         <p className="font-poppins text-[13px] text-slate-600">
           © 2024 Brainz-Dev · All rights reserved.
         </p>
-        <div className="flex items-center gap-4">
-          <Link to="/privacy" className="font-poppins text-[13px] text-slate-500 hover:text-white transition-colors duration-200">
-            Privacy Policy
-          </Link>
-          <Link to="/terms" className="font-poppins text-[13px] text-violet-400 font-medium">
-            Terms &amp; Conditions
-          </Link>
-        </div>
+        <nav aria-label="Legal navigation">
+          <div className="flex items-center gap-4">
+            <Link to="/privacy" className="font-poppins text-[13px] text-slate-500 hover:text-white transition-colors duration-200">
+              Privacy Policy
+            </Link>
+            <Link to="/terms" className="font-poppins text-[13px] text-violet-400 font-medium" aria-current="page">
+              Terms &amp; Conditions
+            </Link>
+          </div>
+        </nav>
       </footer>
     </div>
   );

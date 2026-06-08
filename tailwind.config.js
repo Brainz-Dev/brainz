@@ -5,9 +5,28 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#070711",
-        dimWhite: "rgba(255, 255, 255, 0.65)",
-        dimBlue: "rgba(109, 40, 217, 0.1)",
+        /* ── Page structure ────────────────────────────────────── */
+        primary:   "#FFFFFF",       // page background
+        surface:   "#F8FAFC",       // secondary background / section alternation
+        card:      "#FFFFFF",       // card background
+        /* ── Text ──────────────────────────────────────────────── */
+        "ink":     "#0F172A",       // primary text
+        "ink-2":   "#475569",       // secondary text
+        "ink-3":   "#94A3B8",       // muted / placeholder
+        /* ── Border ────────────────────────────────────────────── */
+        "line":    "#E2E8F0",       // default border
+        "line-2":  "#CBD5E1",       // strong border
+        /* ── Brand ─────────────────────────────────────────────── */
+        brand:     "#7C3AED",
+        "brand-hover": "#6D28D9",
+        "brand-light": "#EDE9FE",   // violet-100 — tinted bg boxes
+        /* ── Semantic ──────────────────────────────────────────── */
+        success:   "#16A34A",
+        warning:   "#F59E0B",
+        danger:    "#DC2626",
+        /* ── Legacy aliases kept so old refs don't break ───────── */
+        dimWhite:  "rgba(255,255,255,0.65)",
+        dimBlue:   "rgba(109,40,217,0.1)",
       },
       fontFamily: {
         poppins: ["Poppins", "sans-serif"],
@@ -16,49 +35,44 @@ module.exports = {
         "brand-gradient":
           "linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #9333ea 100%)",
         "brand-gradient-soft":
-          "linear-gradient(135deg, rgba(91,33,182,0.25) 0%, rgba(147,51,234,0.15) 100%)",
+          "linear-gradient(135deg, rgba(91,33,182,0.08) 0%, rgba(147,51,234,0.05) 100%)",
+        "surface-gradient":
+          "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
       },
       boxShadow: {
-        glass: "0 8px 32px 0 rgba(109, 40, 217, 0.15)",
-        glow: "0 0 60px rgba(124, 58, 237, 0.5)",
-        "glow-sm": "0 0 28px rgba(124, 58, 237, 0.38)",
-        "glow-lg": "0 0 90px rgba(124, 58, 237, 0.55)",
-        card: "0 4px 28px rgba(0, 0, 0, 0.55)",
+        /* light-theme card shadows */
+        sm:    "0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04)",
+        md:    "0 4px 16px rgba(15,23,42,0.08), 0 1px 4px rgba(15,23,42,0.04)",
+        lg:    "0 8px 32px rgba(15,23,42,0.10), 0 2px 8px rgba(15,23,42,0.04)",
+        xl:    "0 16px 48px rgba(15,23,42,0.12), 0 4px 12px rgba(15,23,42,0.05)",
+        brand: "0 4px 24px rgba(124,58,237,0.22), 0 1px 6px rgba(124,58,237,0.12)",
+        "brand-lg": "0 8px 40px rgba(124,58,237,0.30)",
+        /* legacy kept */
+        glass: "0 8px 32px 0 rgba(109,40,217,0.15)",
+        glow:  "0 0 60px rgba(124,58,237,0.5)",
+        card:  "0 4px 28px rgba(0,0,0,0.55)",
+      },
+      borderRadius: {
+        "2xl": "16px",
+        "3xl": "24px",
       },
       animation: {
-        marquee: "marquee 40s linear infinite",
-        float: "float 7s ease-in-out infinite",
-        "float-slow": "float 10s ease-in-out 1.5s infinite",
-        "float-med": "float 8s ease-in-out 3s infinite",
-        "glow-pulse": "glow-pulse 4s ease-in-out infinite",
-        "gradient-x": "gradient-x 5s ease infinite",
-        "fade-in-up": "fade-in-up 0.6s ease-out forwards",
-        shimmer: "shimmer 2.5s ease-in-out infinite 1s",
+        marquee:        "marquee 40s linear infinite",
+        "fade-in-up":   "fade-in-up 0.5s ease-out forwards",
+        "scale-in":     "scale-in 0.2s ease-out forwards",
       },
       keyframes: {
         marquee: {
-          "0%": { transform: "translateX(0)" },
+          "0%":   { transform: "translateX(0)" },
           "100%": { transform: "translateX(-50%)" },
         },
-        float: {
-          "0%, 100%": { transform: "translateY(0px)" },
-          "50%": { transform: "translateY(-14px)" },
-        },
-        "glow-pulse": {
-          "0%, 100%": { opacity: "0.22" },
-          "50%": { opacity: "0.58" },
-        },
-        "gradient-x": {
-          "0%, 100%": { backgroundPosition: "0% 50%" },
-          "50%": { backgroundPosition: "100% 50%" },
-        },
         "fade-in-up": {
-          "0%": { opacity: "0", transform: "translateY(28px)" },
+          "0%":   { opacity: "0", transform: "translateY(20px)" },
           "100%": { opacity: "1", transform: "translateY(0)" },
         },
-        shimmer: {
-          "0%": { transform: "translateX(-100%) skewX(-12deg)" },
-          "100%": { transform: "translateX(200%) skewX(-12deg)" },
+        "scale-in": {
+          "0%":   { opacity: "0", transform: "scale(0.95)" },
+          "100%": { opacity: "1", transform: "scale(1)" },
         },
       },
     },

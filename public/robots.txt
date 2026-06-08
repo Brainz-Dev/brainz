@@ -1,0 +1,13 @@
+# Brainz-Dev robots.txt
+# https://brainz-dev.com
+
+User-agent: *
+Allow: /
+
+# Block build artifacts and server internals
+Disallow: /src/
+Disallow: /node_modules/
+Disallow: /server/
+
+# Sitemap location
+Sitemap: https://brainz-dev.com/sitemap.xml

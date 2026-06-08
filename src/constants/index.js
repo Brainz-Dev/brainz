@@ -1,11 +1,11 @@
-import { send, shield, star, jira, fw, shopify, zoho } from "../assets";
+import { send, shield, star, monday, fw, shopify, zoho } from "../assets";
 
 export const navLinks = [
-  { id: "home",         title: "Home" },
-  { id: "services",     title: "Services" },
-  { id: "process",      title: "Process" },
+  { id: "home", title: "Home" },
+  { id: "services", title: "Services" },
+  { id: "process", title: "Process" },
   { id: "testimonials", title: "Testimonials" },
-  { id: "contact",      title: "Contact" },
+  { id: "contact", title: "Contact" },
 ];
 
 export const features = [
@@ -60,7 +60,7 @@ export const features = [
 ];
 
 export const clients = [
-  { id: "client-1", logo: jira },
+  { id: "client-1", logo: monday },
   { id: "client-2", logo: fw },
   { id: "client-3", logo: shopify },
   { id: "client-4", logo: zoho },
@@ -124,8 +124,32 @@ export const testimonials = [
 ];
 
 export const siteStats = [
-  { value: 500,  isDecimal: false, suffix: "K+",  label: "API Calls/Day",      sub: "Across client systems" },
-  { value: 50,   isDecimal: false, suffix: "+",   label: "Integrations Built", sub: "Tools connected" },
-  { value: 99.9, isDecimal: true,  suffix: "%",   label: "Uptime SLA",         sub: "Guaranteed reliability" },
-  { value: 3,    isDecimal: false, suffix: "wk",  label: "Avg. Ship Time",     sub: "Idea to production" },
+  {
+    value: 500,
+    isDecimal: false,
+    suffix: "K+",
+    label: "API Calls/Day",
+    sub: "Across client systems",
+  },
+  {
+    value: 50,
+    isDecimal: false,
+    suffix: "+",
+    label: "Integrations Built",
+    sub: "Tools connected",
+  },
+  {
+    value: 99.9,
+    isDecimal: true,
+    suffix: "%",
+    label: "Uptime SLA",
+    sub: "Guaranteed reliability",
+  },
+  {
+    value: 3,
+    isDecimal: false,
+    suffix: "wk",
+    label: "Avg. Ship Time",
+    sub: "Idea to production",
+  },
 ];
