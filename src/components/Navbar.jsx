@@ -28,7 +28,7 @@ function Navbar() {
         {navLinks.map((nav) => (
           <li key={nav.id}>
             <a
-              href={`#${nav.id}`}
+              href={`/#${nav.id}`}
               className="font-poppins text-[14px] font-medium text-ink-2 hover:text-brand hover:bg-brand-light px-3 py-1.5 rounded-lg transition-all duration-150"
             >
               {nav.title}
@@ -48,7 +48,7 @@ function Navbar() {
       {/* ── Desktop CTA ───────────────────────────────────── */}
       <div className="sm:flex hidden items-center flex-shrink-0">
         <a
-          href="#contact"
+          href="/#contact"
           className="btn-brand font-poppins font-semibold text-[13px] px-5 py-2.5 rounded-lg inline-flex items-center gap-1.5 transition-all duration-150 hover:shadow-brand focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
         >
           Get Started
@@ -90,7 +90,7 @@ function Navbar() {
                 {navLinks.map((nav) => (
                   <li key={nav.id}>
                     <a
-                      href={`#${nav.id}`}
+                      href={`/#${nav.id}`}
                       onClick={() => setOpen(false)}
                       className="block font-poppins font-medium text-[14px] text-ink-2 hover:text-brand hover:bg-brand-light px-3 py-2.5 rounded-lg transition-all duration-150"
                     >
@@ -110,7 +110,7 @@ function Navbar() {
               </ul>
               <div className="border-t border-line pt-3">
                 <a
-                  href="#contact"
+                  href="/#contact"
                   onClick={() => setOpen(false)}
                   className="block text-center btn-brand font-poppins font-semibold text-[14px] px-4 py-2.5 rounded-lg"
                 >

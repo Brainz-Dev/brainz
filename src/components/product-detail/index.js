@@ -1,0 +1,10 @@
+export { default as SectionHeading }    from "./SectionHeading";
+export { default as AboutSection }      from "./AboutSection";
+export { default as FeaturesSection }   from "./FeaturesSection";
+export { default as MethodologySection } from "./MethodologySection";
+export { default as ScreenshotsSection } from "./ScreenshotsSection";
+export { default as PricingSection }    from "./PricingSection";
+export { default as InstallGuide }      from "./InstallGuide";
+export { default as FAQSection }        from "./FAQSection";
+export { default as VideoSection }      from "./VideoSection";
+export { FeatureIcon, ICON_PATHS }      from "./FeaturesSection";
