@@ -166,7 +166,7 @@ function ProductDetailPage() {
         role="contentinfo"
       >
         <p className="font-poppins text-[13px] text-ink-3">
-          © 2024 Brainz-Dev · All rights reserved.
+          © 2025 Brainz-Dev · All rights reserved.
         </p>
         <nav aria-label="Footer navigation">
           <div className="flex items-center gap-4">

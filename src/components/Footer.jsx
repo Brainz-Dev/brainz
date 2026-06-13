@@ -142,7 +142,7 @@ function Footer() {
       <div className="h-px bg-line mb-6" aria-hidden="true" />
       <div className="flex sm:flex-row flex-col justify-between items-center gap-3">
         <p className="font-poppins text-[13px] text-ink-3">
-          © 2024 Brainz-Dev · All rights reserved.
+          © 2025 Brainz-Dev · All rights reserved.
         </p>
         <p className="font-poppins text-[12px] text-ink-3">
           Made with ♥ for ambitious teams

@@ -24,7 +24,7 @@ function PrivacyPage() {
       <header className="sticky top-0 z-50 navbar-glass" role="banner">
         <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <img src="/brainz.png" alt="Brainz-Dev" className="w-9 h-9 object-contain" />
+            <img src="/brainz-logo.png" alt="Brainz-Dev" className="w-9 h-9 object-contain" />
             <span className="font-poppins font-bold text-[20px] text-ink tracking-tight">
               Brainz<span className="text-gradient">-Dev</span>
             </span>
@@ -52,7 +52,7 @@ function PrivacyPage() {
       {/* Minimal footer */}
       <footer className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 py-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3" role="contentinfo">
         <p className="font-poppins text-[13px] text-ink-3">
-          © 2024 Brainz-Dev · All rights reserved.
+          © 2025 Brainz-Dev · All rights reserved.
         </p>
         <nav aria-label="Legal navigation">
           <div className="flex items-center gap-4">
