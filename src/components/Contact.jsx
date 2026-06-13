@@ -99,7 +99,7 @@ function Contact() {
             <div className="w-2.5 h-2.5 rounded-full bg-success animate-pulse flex-shrink-0" aria-hidden="true" />
             <p className="font-poppins text-[13px] text-emerald-800">
               Currently accepting new projects for{" "}
-              <span className="font-semibold">Q3 2025</span>
+              <span className="font-semibold">Q3 2026</span>
             </p>
           </motion.div>
         </motion.div>
