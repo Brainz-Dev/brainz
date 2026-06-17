@@ -1,7 +1,7 @@
 import icon from "../assets/app-icons/insight-lens.png";
-import screenshotSidebar    from "../assets/screenshots/insight-lens/sidebar.png";
-import screenshotDashboard  from "../assets/screenshots/insight-lens/dashboard.png";
-import screenshotRiskScore  from "../assets/screenshots/insight-lens/risk-score.png";
+import screenshotSidebar from "../assets/screenshots/insight-lens/sidebar.png";
+import screenshotDashboard from "../assets/screenshots/insight-lens/dashboard.png";
+import screenshotRiskScore from "../assets/screenshots/insight-lens/risk-score.png";
 import screenshotResolution from "../assets/screenshots/insight-lens/resolution-time.png";
 
 const products = [
@@ -79,8 +79,10 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
         price: "$10",
         period: "account / month",
         pricingMethod: "Account Per Month",
-        pricingMethodNote: "One flat rate covers all agents in your account — no per-seat charges.",
-        description: "Billed monthly per account. Every agent gets full access to the sidebar and dashboard.",
+        pricingMethodNote:
+          "One flat rate covers all agents in your account — no per-seat charges.",
+        description:
+          "Billed monthly per account. Every agent gets full access to the sidebar and dashboard.",
         features: [
           "Real-time sidebar for all agents",
           "Full-page analytics dashboard",
@@ -91,13 +93,13 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
           "Freshdesk Marketplace support",
         ],
         currencies: [
-          { code: "USD", symbol: "$",   amount: "10"   },
-          { code: "EUR", symbol: "€",   amount: "10"   },
-          { code: "GBP", symbol: "£",   amount: "8"    },
-          { code: "AUD", symbol: "A$",  amount: "15"   },
-          { code: "INR", symbol: "₹",   amount: "1,000" },
-          { code: "BRL", symbol: "R$",  amount: "53"   },
-          { code: "ZAR", symbol: "R",   amount: "170"  },
+          { code: "USD", symbol: "$", amount: "10" },
+          { code: "EUR", symbol: "€", amount: "10" },
+          { code: "GBP", symbol: "£", amount: "8" },
+          { code: "AUD", symbol: "A$", amount: "15" },
+          { code: "INR", symbol: "₹", amount: "1,000" },
+          { code: "BRL", symbol: "R$", amount: "53" },
+          { code: "ZAR", symbol: "R", amount: "170" },
         ],
         cta: "Get on Marketplace",
         ctaHref: "https://www.freshworks.com/apps/freshdesk/",
@@ -172,10 +174,19 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
 
     // Sections rendered in this order on the detail page.
     // Remove a key to hide that section for this product.
-    videoId: "sPUGq2Bn7Uk",
+    videoId: "xp07A7eUFAE",
     videoTitle: "Insight Lens — Product Demo",
 
-    sections: ["about", "video", "features", "methodology", "screenshots", "pricing", "install", "faq"],
+    sections: [
+      "about",
+      "video",
+      "features",
+      "methodology",
+      "screenshots",
+      "pricing",
+      "install",
+      "faq",
+    ],
 
     methodology: {
       riskScore: {
@@ -198,10 +209,26 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
             max: 30,
             description: "Percentage of High or Urgent tickets",
             tiers: [
-              { condition: "≥ 60% High/Urgent", points: 30, label: "Critical mix" },
-              { condition: "≥ 30% High/Urgent", points: 18, label: "Heavy mix" },
-              { condition: "≥ 10% High/Urgent", points: 8, label: "Some high priority" },
-              { condition: "< 10% High/Urgent", points: 0, label: "Mostly low priority" },
+              {
+                condition: "≥ 60% High/Urgent",
+                points: 30,
+                label: "Critical mix",
+              },
+              {
+                condition: "≥ 30% High/Urgent",
+                points: 18,
+                label: "Heavy mix",
+              },
+              {
+                condition: "≥ 10% High/Urgent",
+                points: 8,
+                label: "Some high priority",
+              },
+              {
+                condition: "< 10% High/Urgent",
+                points: 0,
+                label: "Mostly low priority",
+              },
             ],
           },
           {
@@ -209,9 +236,21 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
             max: 25,
             description: "Percentage of Open + Pending tickets",
             tiers: [
-              { condition: "≥ 70% unresolved", points: 25, label: "Severely backlogged" },
-              { condition: "≥ 40% unresolved", points: 15, label: "Backlogged" },
-              { condition: "≥ 20% unresolved", points: 7, label: "Some backlog" },
+              {
+                condition: "≥ 70% unresolved",
+                points: 25,
+                label: "Severely backlogged",
+              },
+              {
+                condition: "≥ 40% unresolved",
+                points: 15,
+                label: "Backlogged",
+              },
+              {
+                condition: "≥ 20% unresolved",
+                points: 7,
+                label: "Some backlog",
+              },
               { condition: "< 20% unresolved", points: 0, label: "Healthy" },
             ],
           },
@@ -220,17 +259,45 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
             max: 15,
             description: "Last 3 days vs. earlier in the period",
             tiers: [
-              { condition: "More in last 3 days than before (and > 2 recent)", points: 15, label: "Accelerating" },
-              { condition: "All complaints in last 3 days only", points: 10, label: "All recent" },
+              {
+                condition: "More in last 3 days than before (and > 2 recent)",
+                points: 15,
+                label: "Accelerating",
+              },
+              {
+                condition: "All complaints in last 3 days only",
+                points: 10,
+                label: "All recent",
+              },
               { condition: "Stable or declining", points: 0, label: "Stable" },
             ],
           },
         ],
         verdicts: [
-          { label: "Low",      range: "0 – 25",  color: "emerald", description: "Normal — no immediate action needed" },
-          { label: "Medium",   range: "26 – 50", color: "blue",    description: "Watch — monitor for further increases" },
-          { label: "High",     range: "51 – 75", color: "amber",   description: "Escalate — assign additional agents" },
-          { label: "Critical", range: "76 – 100",color: "red",     description: "Urgent — escalate to management now" },
+          {
+            label: "Low",
+            range: "0 – 25",
+            color: "emerald",
+            description: "Normal — no immediate action needed",
+          },
+          {
+            label: "Medium",
+            range: "26 – 50",
+            color: "blue",
+            description: "Watch — monitor for further increases",
+          },
+          {
+            label: "High",
+            range: "51 – 75",
+            color: "amber",
+            description: "Escalate — assign additional agents",
+          },
+          {
+            label: "Critical",
+            range: "76 – 100",
+            color: "red",
+            description: "Urgent — escalate to management now",
+          },
         ],
       },
       resolutionTime: {
@@ -240,7 +307,8 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
         howMeasured: [
           {
             metric: "Resolution Time (per ticket)",
-            formula: "updated_at − created_at (in hours), for Resolved and Closed tickets only",
+            formula:
+              "updated_at − created_at (in hours), for Resolved and Closed tickets only",
             note: "Tickets with negative durations or over 90 days are excluded as data anomalies.",
           },
           {
@@ -250,20 +318,22 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
           },
           {
             metric: "Resolution Rate",
-            formula: "Resolved tickets ÷ total tickets × 100, rounded to nearest integer",
+            formula:
+              "Resolved tickets ÷ total tickets × 100, rounded to nearest integer",
             note: "A low rate on a large volume product is a strong risk signal.",
           },
           {
             metric: "SLA Compliance (per priority)",
-            formula: "Tickets resolved within their priority threshold ÷ total resolved tickets × 100",
+            formula:
+              "Tickets resolved within their priority threshold ÷ total resolved tickets × 100",
             note: "Overall bar turns green ≥ 90%, amber ≥ 70%, red < 70%.",
           },
         ],
         slaThresholds: [
           { priority: "Urgent", threshold: "≤ 4 hours" },
-          { priority: "High",   threshold: "≤ 8 hours" },
+          { priority: "High", threshold: "≤ 8 hours" },
           { priority: "Medium", threshold: "≤ 24 hours" },
-          { priority: "Low",    threshold: "≤ 48 hours" },
+          { priority: "Low", threshold: "≤ 48 hours" },
         ],
       },
     },

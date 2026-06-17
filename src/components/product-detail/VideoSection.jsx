@@ -4,8 +4,13 @@ export default function VideoSection({ videoId, title }) {
   if (!videoId) return null;
 
   return (
-    <section aria-labelledby="video-heading" className="mt-12 flex flex-col gap-5">
-      <SectionHeading id="video-heading">{title ?? "Watch It in Action"}</SectionHeading>
+    <section
+      aria-labelledby="video-heading"
+      className="mt-12 flex flex-col gap-5"
+    >
+      <SectionHeading id="video-heading">
+        {title ?? "Watch It in Action"}
+      </SectionHeading>
       <div className="card rounded-2xl overflow-hidden">
         {/* 16:9 responsive wrapper */}
         <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
