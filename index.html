@@ -161,13 +161,6 @@
         ]
       }
     </script>
-    <!-- SPA fallback: restore path captured by 404.html -->
-    <script>
-      (function () {
-        var r = new URLSearchParams(window.location.search).get("r");
-        if (r) window.history.replaceState(null, "", r);
-      })();
-    </script>
   </head>
   <body>
     <div id="root"></div>
