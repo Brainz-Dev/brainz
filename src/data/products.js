@@ -102,7 +102,7 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
           { code: "ZAR", symbol: "R", amount: "170" },
         ],
         cta: "Get on Marketplace",
-        ctaHref: "https://www.freshworks.com/apps/freshdesk/",
+        ctaHref: "https://www.freshworks.com/apps/insight_lens_1/",
         highlighted: true,
       },
     ],
