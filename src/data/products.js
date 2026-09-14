@@ -447,14 +447,14 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
 
     pricing: [
       {
-        tier: "Marketplace Listing",
-        price: "Coming Soon",
-        period: "TBD",
-        pricingMethod: "Pricing TBD",
+        tier: "Account Plan",
+        price: "$10",
+        period: "account / month",
+        pricingMethod: "Account Per Month",
         pricingMethodNote:
-          "This app is not yet published on the Freshdesk Marketplace — pricing will be announced at launch.",
+          "One flat rate covers all agents in your account — no per-seat charges.",
         description:
-          "Interested in early access or a custom rollout? Get in touch with our team.",
+          "Billed monthly per account once live on the Freshdesk Marketplace. Currently under review — get in touch for early access.",
         features: [
           "Contact match in ticket sidebar",
           "Customer & Vendor creation",
@@ -516,7 +516,7 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
       {
         question: "Is this available on the Freshdesk Marketplace yet?",
         answer:
-          "Not yet — it's in final testing. Reach out via the contact form and we'll let you know as soon as it's listed.",
+          "It's been submitted to the Freshdesk Marketplace and is currently under review. Reach out via the contact form and we'll let you know the moment it's approved and listed.",
       },
     ],
     videoId: "HZFOScZnlIk",

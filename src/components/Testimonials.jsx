@@ -9,7 +9,7 @@ const StarIcon = () => (
   </svg>
 );
 
-function TestimonialCard({ quote, name, role, company, initial, color, index }) {
+function TestimonialCard({ quote, name, role, initial, color, index }) {
   return (
     <motion.article
       initial={{ opacity: 0, y: 28 }}
@@ -17,7 +17,7 @@ function TestimonialCard({ quote, name, role, company, initial, color, index }) 
       viewport={{ once: true, margin: "-60px" }}
       transition={{ duration: 0.5, delay: index * 0.10, ease }}
       className="testimonial-card p-7 flex flex-col gap-5"
-      aria-label={`Testimonial from ${name}, ${role} at ${company}`}
+      aria-label={`Testimonial from ${name}, ${role}`}
     >
       {/* Stars */}
       <div className="flex gap-0.5" aria-label="5 stars">
@@ -51,9 +51,7 @@ function TestimonialCard({ quote, name, role, company, initial, color, index }) 
         </div>
         <div>
           <p className="font-poppins font-semibold text-ink text-[14px]">{name}</p>
-          <p className="font-poppins text-ink-3 text-[12px]">
-            {role} · <span className="text-ink-2">{company}</span>
-          </p>
+          <p className="font-poppins text-ink-3 text-[12px]">{role}</p>
         </div>
       </div>
     </motion.article>
