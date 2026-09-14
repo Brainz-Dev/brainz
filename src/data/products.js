@@ -3,6 +3,11 @@ import screenshotSidebar from "../assets/screenshots/insight-lens/sidebar.png";
 import screenshotDashboard from "../assets/screenshots/insight-lens/dashboard.png";
 import screenshotRiskScore from "../assets/screenshots/insight-lens/risk-score.png";
 import screenshotResolution from "../assets/screenshots/insight-lens/resolution-time.png";
+import fdZbIcon from "../assets/app-icons/freshdesk-zoho-books.png";
+import Fd_zb_sidebar from "../assets/screenshots/fd-zb/side-bar.png";
+import Fd_zb_contact from "../assets/screenshots/fd-zb/contact-view.png";
+import Fd_zb_sales from "../assets/screenshots/fd-zb/sales.png";
+import Fd_zb_contact_form from "../assets/screenshots/fd-zb/contact-form.png";
 
 const products = [
   {
@@ -370,6 +375,190 @@ Insight Lens works the moment it is installed. No spreadsheet mapping, no automa
         body: "Open any ticket in Freshdesk — the Insight Lens card should appear in the right sidebar. Access the full dashboard from Admin → Marketplace Apps → Insight Lens → Open, or from the Apps section in the left navigation.",
       },
     ],
+  },
+
+  {
+    id: "product-2",
+    slug: "freshdesk-zoho-books",
+    name: "Zoho Books for Freshdesk",
+    tagline:
+      "See the customer's billing history without ever leaving the ticket.",
+    category: "Integration",
+    icon: fdZbIcon,
+
+    description: `Zoho Books for Freshdesk is a Freshdesk Marketplace app that connects your support tickets directly to your Zoho Books accounting data — right inside the ticket sidebar your agents already use.
+
+The moment an agent opens a ticket, the app matches the requester's email against your Zoho Books contacts. If a match exists, the sidebar shows the contact's name, email, and phone number at a glance, with a one-click "Expand contact" view showing their Customer or Vendor profile, outstanding receivables or payables, unused credits, and quick links to raise a new Invoice, Estimate, Bill, Purchase Order, or Expense for them in Zoho Books.
+
+From the expanded view, agents can also browse Invoices, Estimates, Bills, Purchase Orders, and Expenses, and read or add Comments on the contact — all without switching tabs or asking the customer to repeat account details.
+
+If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent stuck — it offers to create a new Customer or Vendor on the spot, pre-filled with the requester's name, email, and mobile number from the ticket, or to browse the full existing contact list and link an existing one.`,
+
+    features: [
+      {
+        title: "Instant Contact Match",
+        description:
+          "Matches the ticket requester's email against Zoho Books contacts automatically — no manual searching, every time the sidebar opens.",
+        icon: "search",
+      },
+      {
+        title: "Contact Snapshot in the Sidebar",
+        description:
+          "Name, email, and phone shown immediately, with one click to expand the full Customer or Vendor profile.",
+        icon: "users",
+      },
+      {
+        title: "Receivables, Payables & Credits",
+        description:
+          "See outstanding receivables or payables and unused credits for the contact, in their own currency, without opening Zoho Books.",
+        icon: "chart",
+      },
+      {
+        title: "One-Click Document Creation",
+        description:
+          "Jump straight into Zoho Books to create a new Invoice, Estimate, Bill, Purchase Order, or Expense — pre-linked to the matched contact.",
+        icon: "zap",
+      },
+      {
+        title: "Sales & Purchase History",
+        description:
+          "Browse a contact's Invoices, Estimates, Bills, Purchase Orders, and Expenses in dedicated tabs, right from the ticket.",
+        icon: "clock",
+      },
+      {
+        title: "Contact Comments",
+        description:
+          "Read and add comments on a Zoho Books contact from the same panel, so account notes stay attached to the right record.",
+        icon: "mail",
+      },
+      {
+        title: "Create Customer or Vendor Inline",
+        description:
+          "When no match is found, create a new Customer or Vendor without leaving the ticket — the form pre-fills from the requester's Freshdesk details.",
+        icon: "link",
+      },
+      {
+        title: "Secure OAuth Connection",
+        description:
+          "Connects to Zoho Books over OAuth, scoped to contacts, invoices, bills, estimates, expenses, and purchase orders — no shared passwords.",
+        icon: "lock",
+      },
+    ],
+
+    pricing: [
+      {
+        tier: "Marketplace Listing",
+        price: "Coming Soon",
+        period: "TBD",
+        pricingMethod: "Pricing TBD",
+        pricingMethodNote:
+          "This app is not yet published on the Freshdesk Marketplace — pricing will be announced at launch.",
+        description:
+          "Interested in early access or a custom rollout? Get in touch with our team.",
+        features: [
+          "Contact match in ticket sidebar",
+          "Customer & Vendor creation",
+          "Invoices, Estimates, Bills, POs & Expenses",
+          "Contact comments",
+        ],
+        highlighted: true,
+      },
+    ],
+
+    screenshots: [
+      {
+        title: "Ticket Sidebar Match",
+        image: Fd_zb_sidebar,
+        description:
+          "The instant a ticket opens, the matched Zoho Books contact's name, email, and phone appear in the sidebar.",
+      },
+      {
+        title: "Contact Detail View",
+        image: Fd_zb_contact,
+        description:
+          "Expanded Customer or Vendor profile with receivables/payables, unused credits, and a quick-create menu for new documents.",
+      },
+      {
+        title: "Sales & Purchase Tabs",
+        image: Fd_zb_sales,
+        description:
+          "Invoices, Estimates, Bills, Purchase Orders, and Expenses for the contact, browsable without leaving Freshdesk.",
+      },
+      {
+        title: "Create Customer / Vendor",
+        image: Fd_zb_contact_form,
+        description:
+          "A pre-filled form lets agents add a missing requester as a new Customer or Vendor in a couple of clicks.",
+      },
+    ],
+
+    faq: [
+      {
+        question: "How does the app find the right Zoho Books contact?",
+        answer:
+          "It looks up the ticket requester's email against your Zoho Books contacts the moment the sidebar loads. If a match is found, the contact's details appear immediately; if not, you're offered the option to create one.",
+      },
+      {
+        question: "What do I need to set up before it works?",
+        answer:
+          "After installing the app, open its settings and select your Zoho Books Data Centre and connect your Organisation via OAuth. Every ticket sidebar checks Zoho Books automatically once that's done.",
+      },
+      {
+        question: "Can I create both Customers and Vendors from Freshdesk?",
+        answer:
+          'Yes. If the requester isn\'t already a contact, the sidebar offers separate "Add New Customer" and "Add New Vendor" buttons, each opening a form pre-filled with the requester\'s name, email, and mobile number.',
+      },
+      {
+        question: "What Zoho Books data can I see without leaving the ticket?",
+        answer:
+          "Contact details, outstanding receivables or payables, unused credits, and — from dedicated tabs — Invoices, Estimates, Bills, Purchase Orders, Expenses, and Comments.",
+      },
+      {
+        question: "Is this available on the Freshdesk Marketplace yet?",
+        answer:
+          "Not yet — it's in final testing. Reach out via the contact form and we'll let you know as soon as it's listed.",
+      },
+    ],
+    videoId: "HZFOScZnlIk",
+    videoTitle: "Zoho Books for Freshdesk — Product Demo",
+    installationGuide: [
+      {
+        step: 1,
+        title: "Install the App",
+        body: 'Go to Freshdesk → Admin → Marketplace Apps → Get More Apps and search for "Zoho Books for Freshdesk". Click the listing, then click Install.',
+      },
+      {
+        step: 2,
+        title: "Create a Zoho API Console Client",
+        body: "In the Zoho API Console for your data centre, register a Server-based Application to get a Client ID and Client Secret. Set its Redirect URI to https://oauth.freshdev.io/auth/callback.",
+        link: {
+          href: "https://www.zoho.com/developer/oauth/register-app.html",
+          label: "Zoho OAuth app registration guide",
+        },
+      },
+      {
+        step: 3,
+        title: "Connect Zoho Books via OAuth",
+        body: "On the app's OAuth setup screen, enter the Client ID, Client Secret, and your Zoho Books Data Centre extension (e.g. com for US, eu for Europe, in for India). Click Authorize and grant the requested scopes for contacts, invoices, bills, estimates, expenses, and purchase orders.",
+      },
+      {
+        step: 4,
+        title: "Connect Your Freshdesk Account",
+        body: "Enter your Freshdesk domain (e.g. example.freshdesk.com) and your Freshdesk API key, found under your profile picture → Profile Settings → API Key. Click Verify Connection.",
+      },
+      {
+        step: 5,
+        title: "Select Your Zoho Books Organisation",
+        body: "Choose the Data Centre and Organisation you connected in step 3 — it must match the account you authorized — then click Save Organisation.",
+      },
+      {
+        step: 6,
+        title: "Confirm It's Working",
+        body: "Open any ticket in Freshdesk. The sidebar should show the requester's matched Zoho Books contact, or an option to create one if no match is found.",
+      },
+    ],
+
+    sections: ["about", "video", "features", "screenshots", "pricing", "install", "faq"],
   },
 ];
 
