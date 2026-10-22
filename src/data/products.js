@@ -8,6 +8,7 @@ import Fd_zb_sidebar from "../assets/screenshots/fd-zb/side-bar.png";
 import Fd_zb_contact from "../assets/screenshots/fd-zb/contact-view.png";
 import Fd_zb_sales from "../assets/screenshots/fd-zb/sales.png";
 import Fd_zb_contact_form from "../assets/screenshots/fd-zb/contact-form.png";
+// import kanbanProIcon from "../assets/app-icons/kanban-pro.png";
 
 const products = [
   {
@@ -454,13 +455,15 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
         pricingMethodNote:
           "One flat rate covers all agents in your account — no per-seat charges.",
         description:
-          "Billed monthly per account once live on the Freshdesk Marketplace. Currently under review — get in touch for early access.",
+          "Billed monthly per account through the Freshdesk Marketplace.",
         features: [
           "Contact match in ticket sidebar",
           "Customer & Vendor creation",
           "Invoices, Estimates, Bills, POs & Expenses",
           "Contact comments",
         ],
+        cta: "Get on Marketplace",
+        ctaHref: "https://www.freshworks.com/apps/zoho_books_for_freshdesk/",
         highlighted: true,
       },
     ],
@@ -513,11 +516,6 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
         answer:
           "Contact details, outstanding receivables or payables, unused credits, and — from dedicated tabs — Invoices, Estimates, Bills, Purchase Orders, Expenses, and Comments.",
       },
-      {
-        question: "Is this available on the Freshdesk Marketplace yet?",
-        answer:
-          "It's been submitted to the Freshdesk Marketplace and is currently under review. Reach out via the contact form and we'll let you know the moment it's approved and listed.",
-      },
     ],
     videoId: "HZFOScZnlIk",
     videoTitle: "Zoho Books for Freshdesk — Product Demo",
@@ -558,8 +556,144 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
       },
     ],
 
-    sections: ["about", "video", "features", "screenshots", "pricing", "install", "faq"],
+    sections: [
+      "about",
+      "video",
+      "features",
+      "screenshots",
+      "pricing",
+      "install",
+      "faq",
+    ],
   },
+
+  //   {
+  //     id: "product-3",
+  //     slug: "kanban-pro",
+  //     name: "Kanban Pro for Zoho Desk",
+  //     tagline:
+  //       "Turn your Zoho Desk ticket queue into a drag-and-drop Kanban board.",
+  //     category: "Productivity",
+  //     marketplace: "Zoho Marketplace",
+  //     icon: kanbanProIcon,
+
+  //     description: `Kanban Pro is a Zoho Desk extension that shows your tickets as a Kanban board. It opens full-screen from the Desk top band, so agents and team leads can see the whole queue at a glance instead of paging through list views.
+
+  // Group columns by status, priority, team, channel, classification, or any custom picklist field. Narrow the board with filters for status, assignee ("Me" or Unassigned), team, priority, channel, due date, created and modified dates, custom fields, and subject or ticket number.
+
+  // Drag a card to another column and the ticket is updated in Zoho Desk instantly. Every card also has quick menus for status, priority, and assignee, and a quick-view drawer shows editable properties, the description, and the latest conversations without leaving the board.
+
+  // For bigger clean-ups, select several cards and bulk-update their status, assignee, or priority in one go. WIP limits per column and SLA badges (overdue / due soon) help teams spot bottlenecks early, and saved views let each agent keep their own layouts while admins publish shared views for the whole team.`,
+
+  //     features: [
+  //       {
+  //         title: "Group by Any Field",
+  //         description:
+  //           "Build columns from status, priority, team, channel, classification, or any custom picklist field in your Zoho Desk.",
+  //         icon: "chart",
+  //       },
+  //       {
+  //         title: "Drag-and-Drop Updates",
+  //         description:
+  //           "Move a card between columns and the ticket is updated in Zoho Desk straight away, with automatic rollback if the update fails.",
+  //         icon: "zap",
+  //       },
+  //       {
+  //         title: "Powerful Filters",
+  //         description:
+  //           "Filter by status, assignee (including Me and Unassigned), team, priority, channel, due date, created/modified date, custom fields, and subject or #number.",
+  //         icon: "search",
+  //       },
+  //       {
+  //         title: "Quick-View Drawer",
+  //         description:
+  //           "Open any card to see and edit its properties, read the description, and check the latest conversations without leaving the board.",
+  //         icon: "mail",
+  //       },
+  //       {
+  //         title: "Bulk Actions",
+  //         description:
+  //           "Multi-select cards and update status, assignee, or priority for all of them at once.",
+  //         icon: "users",
+  //       },
+  //       {
+  //         title: "WIP Limits & SLA Badges",
+  //         description:
+  //           "Set work-in-progress limits per column and see overdue / due-soon badges on cards so bottlenecks and SLA risks stand out.",
+  //         icon: "clock",
+  //       },
+  //       {
+  //         title: "Saved Views",
+  //         description:
+  //           "Save personal board layouts with your grouping, filters, and sort. Admins can publish shared views for the whole team.",
+  //         icon: "settings",
+  //       },
+  //       {
+  //         title: "Rate-Limit Aware",
+  //         description:
+  //           "Requests are queued and paced to stay within Zoho Desk API limits, and the board auto-refreshes visible columns in the background.",
+  //         icon: "refresh",
+  //       },
+  //     ],
+
+  //     faq: [
+  //       {
+  //         question: "Where do I open Kanban Pro in Zoho Desk?",
+  //         answer:
+  //           "After installation, open Kanban Pro from the app menu in the Zoho Desk top band. The board opens full-screen inside Desk.",
+  //       },
+  //       {
+  //         question: "Which fields can I group the board by?",
+  //         answer:
+  //           "Status, priority, team, channel, classification, and any single-select custom picklist field. Assignee is available as a filter, card menu, and bulk action rather than as columns, so large teams don't end up with hundreds of columns.",
+  //       },
+  //       {
+  //         question: "Does dragging a card really change the ticket?",
+  //         answer:
+  //           "Yes. Dropping a card on another column updates that field on the ticket in Zoho Desk. If the update fails, the card moves back and you see an error message.",
+  //       },
+  //       {
+  //         question: "Can I share board views with my team?",
+  //         answer:
+  //           "Every agent can save personal views. Zoho Desk administrators can also share a view with everyone in the organisation.",
+  //       },
+  //       {
+  //         question: "Which Zoho Desk data centres are supported?",
+  //         answer:
+  //           "Kanban Pro works with Zoho Desk in the US, EU, India, Australia, Japan, China, Saudi Arabia, and Canada data centres.",
+  //       },
+  //       {
+  //         question: "What permissions does the app need?",
+  //         answer:
+  //           "It reads tickets, contacts, basic organisation data, and settings, and updates tickets. Each agent authorises the connection with their own Zoho Desk account, so the board respects their existing permissions.",
+  //       },
+  //     ],
+
+  //     installationGuide: [
+  //       {
+  //         step: 1,
+  //         title: "Install the Extension",
+  //         body: 'In Zoho Desk, go to Setup → Marketplace → All, search for "Kanban Pro", and click Install.',
+  //       },
+  //       {
+  //         step: 2,
+  //         title: "Authorise the Connection",
+  //         body: "Approve the requested Zoho Desk permissions (read access to tickets, contacts, basic info, and settings, plus ticket updates). Each agent is asked to authorise their own account the first time they open the board.",
+  //       },
+  //       {
+  //         step: 3,
+  //         title: "Open the Board",
+  //         body: "Click Kanban Pro in the Zoho Desk top-band app menu. The board opens full-screen and loads tickets for your current department.",
+  //       },
+  //       {
+  //         step: 4,
+  //         title: "Set Up Your View",
+  //         body: "Choose a department, pick what to group by, add filters, and click Save to keep the layout as a personal view, or share it with everyone if you're an admin.",
+  //       },
+  //     ],
+
+  //     sections: ["about", "features", "install", "faq"],
+  //   },
 ];
 
 export default products;

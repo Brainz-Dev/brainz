@@ -8,9 +8,9 @@ function StepCard({ step, title, body, link }) {
           {step}
         </span>
       </div>
-      <div className="flex flex-col gap-1">
+      <div className="flex flex-col gap-1 min-w-0">
         <h4 className="font-poppins font-semibold text-ink text-[15px]">{title}</h4>
-        <p className="font-poppins text-[13px] text-ink-2 leading-relaxed">{body}</p>
+        <p className="font-poppins text-[13px] text-ink-2 leading-relaxed break-words">{body}</p>
         {link && (
           <a
             href={link.href}
@@ -32,7 +32,7 @@ export default function InstallGuide({ guide }) {
   return (
     <section aria-labelledby="install-heading" className="mt-12 flex flex-col gap-5">
       <SectionHeading id="install-heading">Installation Guide</SectionHeading>
-      <ol className="grid sm:grid-cols-2 gap-4 list-none">
+      <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
         {guide.map(({ step, title, body, link }) => (
           <li key={step}>
             <StepCard step={step} title={title} body={body} link={link} />

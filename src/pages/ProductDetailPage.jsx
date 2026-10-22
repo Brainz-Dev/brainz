@@ -36,6 +36,7 @@ const CATEGORY_COLORS = {
   API:         "text-indigo-700 bg-indigo-50 border-indigo-200",
   Data:        "text-cyan-700 bg-cyan-50 border-cyan-200",
   Analytics:   "text-emerald-700 bg-emerald-50 border-emerald-200",
+  Productivity: "text-amber-700 bg-amber-50 border-amber-200",
 };
 
 // ── Minimal nav ───────────────────────────────────────────────

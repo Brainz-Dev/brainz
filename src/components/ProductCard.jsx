@@ -6,6 +6,7 @@ const categoryColors = {
   API:         "text-indigo-700 bg-indigo-50 border-indigo-200",
   Data:        "text-cyan-700 bg-cyan-50 border-cyan-200",
   Analytics:   "text-emerald-700 bg-emerald-50 border-emerald-200",
+  Productivity: "text-amber-700 bg-amber-50 border-amber-200",
 };
 
 function IconSlot({ icon, name }) {
@@ -74,7 +75,7 @@ function ProductCard({ product }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
         </svg>
         <span className="font-poppins text-[12px] font-medium text-ink-2">
-          Freshdesk Marketplace
+          {product.marketplace ?? "Freshdesk Marketplace"}
         </span>
       </div>
 

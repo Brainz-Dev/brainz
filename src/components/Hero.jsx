@@ -39,7 +39,7 @@ function Hero() {
       </div>
 
       {/* ── LEFT ─────────────────────────────────────────── */}
-      <div className="flex-1 flex flex-col items-start relative z-10">
+      <div className="flex-1 w-full min-w-0 flex flex-col items-start relative z-10">
         {/* Eyebrow badge */}
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -59,7 +59,7 @@ function Hero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.08, ease }}
-          className="font-poppins font-black ss:text-[72px] text-[44px] text-ink ss:leading-[1.02] leading-[1.1] mb-5"
+          className="font-poppins font-black ss:text-[72px] xs:text-[44px] text-[32px] text-ink ss:leading-[1.02] leading-[1.1] mb-5"
         >
           Your SaaS Stack,
           <br />

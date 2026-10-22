@@ -98,7 +98,7 @@ function TermsAndConditions() {
         <div className="space-y-2">
           <BoldItem label="1.1 Application">
             Any Brainz-Dev application acquired through{" "}
-            <span className="text-ink font-medium">https://www.freshworks.com/apps</span>
+            <span className="text-ink font-medium break-all">https://www.freshworks.com/apps</span>
           </BoldItem>
           <BoldItem label="1.2 Confidential Information">
             Information designated or reasonably considered confidential, marked as such, or

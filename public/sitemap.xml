@@ -28,6 +28,22 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- Product detail: Zoho Books for Freshdesk -->
+  <url>
+    <loc>https://brainz-dev.com/products/freshdesk-zoho-books</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Product detail: Kanban Pro for Zoho Desk -->
+  <url>
+    <loc>https://brainz-dev.com/products/kanban-pro</loc>
+    <lastmod>2026-10-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Legal pages -->
   <url>
     <loc>https://brainz-dev.com/privacy</loc>
