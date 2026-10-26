@@ -581,11 +581,11 @@ If the requester isn't a Zoho Books contact yet, the app doesn't leave the agent
 
     description: `Kanban Pro is a Zoho Desk extension that shows your tickets as a Kanban board. It opens full-screen from the Desk top band, so agents and team leads can see the whole queue at a glance instead of paging through list views.
 
-  Group columns by status, priority, team, channel, classification, or any custom picklist field. Narrow the board with filters for status, assignee ("Me" or Unassigned), team, priority, channel, due date, created and modified dates, custom fields, and subject or ticket number.
+Group columns by status, priority, team, channel, classification, or any custom picklist field. Narrow the board with filters for status, assignee ("Me" or Unassigned), team, priority, channel, due date, created and modified dates, custom fields, and subject or ticket number.
 
-  Drag a card to another column and the ticket is updated in Zoho Desk instantly. Every card also has quick menus for status, priority, and assignee, and a quick-view drawer shows editable properties, the description, and the latest conversations without leaving the board.
+Drag a card to another column and the ticket is updated in Zoho Desk instantly. Every card also has quick menus for status, priority, and assignee, and a quick-view drawer shows editable properties, the description, and the latest conversations without leaving the board.
 
-  For bigger clean-ups, select several cards and bulk-update their status, assignee, or priority in one go. WIP limits per column and SLA badges (overdue / due soon) help teams spot bottlenecks early, and saved views let each agent keep their own layouts while admins publish shared views for the whole team.`,
+For bigger clean-ups, select several cards and bulk-update their status, assignee, or priority in one go. WIP limits per column and SLA badges (overdue / due soon) help teams spot bottlenecks early, and saved views let each agent keep their own layouts while admins publish shared views for the whole team.`,
 
     features: [
       {
