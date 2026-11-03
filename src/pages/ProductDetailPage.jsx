@@ -1,7 +1,6 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import products from "../data/products";
 import SEOHead from "../components/SEOHead";
-import brainzLogo from "../assets/brainz-logo.png";
 import {
   AboutSection,
   FeaturesSection,
@@ -29,56 +28,21 @@ const SECTION_RENDERERS = {
 // Default order used when a product doesn't define its own sections array
 const DEFAULT_SECTIONS = ["about", "features", "screenshots", "pricing", "install", "faq"];
 
-// ── Category badge colours ────────────────────────────────────
-const CATEGORY_COLORS = {
-  Integration: "text-violet-700 bg-violet-50 border-violet-200",
-  Automation:  "text-fuchsia-700 bg-fuchsia-50 border-fuchsia-200",
-  API:         "text-indigo-700 bg-indigo-50 border-indigo-200",
-  Data:        "text-cyan-700 bg-cyan-50 border-cyan-200",
-  Analytics:   "text-emerald-700 bg-emerald-50 border-emerald-200",
-  Productivity: "text-amber-700 bg-amber-50 border-amber-200",
-};
-
-// ── Minimal nav ───────────────────────────────────────────────
-function DetailNav() {
-  return (
-    <header className="sticky top-0 z-50 navbar-glass" role="banner">
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10 py-4 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-2.5">
-          <img src={brainzLogo} alt="Brainz-Dev" className="w-9 h-9 object-contain" />
-          <span className="font-poppins font-bold text-[20px] text-ink tracking-tight">
-            Brainz<span className="text-gradient">-Dev</span>
-          </span>
-        </Link>
-        <Link
-          to="/products"
-          className="font-poppins text-[13px] text-ink-2 hover:text-ink flex items-center gap-1.5 transition-colors duration-200"
-          aria-label="Back to all products"
-        >
-          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
-            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-          </svg>
-          All Products
-        </Link>
-      </div>
-    </header>
-  );
-}
 
 // ── Product icon placeholder ──────────────────────────────────
 function ProductIcon({ icon, name }) {
   if (icon) {
     return (
-      <img src={icon} alt={`${name} app icon`} className="w-24 h-24 sm:w-28 sm:h-28 object-contain rounded-2xl" />
+      <img src={icon} alt={`${name} app icon`} className="w-20 h-20 sm:w-24 sm:h-24 object-contain rounded-2xl border border-line" />
     );
   }
   return (
     <div
-      className="w-20 h-20 rounded-2xl border-2 border-dashed border-slate-300 flex items-center justify-center bg-slate-50"
+      className="w-20 h-20 rounded-2xl border border-dashed border-line-2 flex items-center justify-center bg-surface"
       role="img"
       aria-label={`${name} placeholder icon`}
     >
-      <svg className="w-9 h-9 text-slate-300" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24" aria-hidden="true">
+      <svg className="w-9 h-9 text-ink-3" fill="none" stroke="currentColor" strokeWidth={1.2} viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5M21 12V6.75A2.25 2.25 0 0018.75 4.5H5.25A2.25 2.25 0 003 6.75V12" />
       </svg>
     </div>
@@ -92,8 +56,8 @@ function ProductDetailPage() {
 
   if (!product) return <Navigate to="/products" replace />;
 
-  const badgeClass = CATEGORY_COLORS[product.category] ?? "text-slate-600 bg-slate-50 border-slate-200";
   const sections   = product.sections ?? DEFAULT_SECTIONS;
+  const marketplaceHref = product.pricing?.find((plan) => plan.ctaHref)?.ctaHref;
 
   const breadcrumbs = [
     { name: "Home",     path: "/" },
@@ -118,7 +82,7 @@ function ProductDetailPage() {
   };
 
   return (
-    <div className="min-h-screen bg-primary overflow-x-hidden relative">
+    <>
       <SEOHead
         title={product.name}
         description={product.tagline}
@@ -129,28 +93,41 @@ function ProductDetailPage() {
         jsonLdExtra={jsonLd}
       />
 
-      <div className="hero-grid-bg fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-10 pt-10 sm:pt-14 pb-24 sm:pb-32">
+        <Link
+          to="/products"
+          className="inline-flex items-center gap-1.5 font-poppins text-[13px] text-ink-2 hover:text-ink mb-10 transition-colors duration-200"
+        >
+          <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24" aria-hidden="true">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+          </svg>
+          All products
+        </Link>
 
-      <DetailNav />
-
-      <main
-        id="main-content"
-        className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 py-14 sm:py-20"
-        role="main"
-      >
         {/* ── Hero band — always rendered ── */}
-        <div className="card-md rounded-2xl p-8 sm:p-10 flex flex-col sm:flex-row items-start sm:items-center gap-7 mb-10">
+        <div className="flex flex-col sm:flex-row items-start gap-7 pb-12 mb-4 border-b border-line">
           <ProductIcon icon={product.icon} name={product.name} />
           <div className="flex flex-col gap-3">
-            <span className={`self-start text-[11px] font-poppins font-semibold tracking-widest uppercase px-3 py-1 rounded-full border ${badgeClass}`}>
+            <p className="font-poppins text-[14px] text-ink-3">
               {product.category}
-            </span>
-            <h1 className="font-poppins font-bold text-[28px] sm:text-[34px] text-ink leading-tight">
+              {product.marketplace && <> · {product.marketplace}</>}
+            </p>
+            <h1 className="section-heading font-poppins text-[34px] sm:text-[44px]">
               {product.name}
             </h1>
-            <p className="font-poppins text-[15px] text-ink-2 leading-relaxed max-w-xl">
+            <p className="font-poppins text-[17px] text-ink-2 leading-[1.6] max-w-[620px]">
               {product.tagline}
             </p>
+            {marketplaceHref && (
+              <a
+                href={marketplaceHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-brand self-start mt-3 font-poppins text-[15px] px-5 py-2.5 rounded-lg"
+              >
+                Get it on the marketplace
+              </a>
+            )}
           </div>
         </div>
 
@@ -159,25 +136,8 @@ function ProductDetailPage() {
           const render = SECTION_RENDERERS[key];
           return render ? render(product) : null;
         })}
-      </main>
-
-      {/* Footer */}
-      <footer
-        className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10 py-8 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3"
-        role="contentinfo"
-      >
-        <p className="font-poppins text-[13px] text-ink-3">
-          © 2025 Brainz-Dev · All rights reserved.
-        </p>
-        <nav aria-label="Footer navigation">
-          <div className="flex items-center gap-4">
-            <Link to="/products" className="font-poppins text-[13px] text-ink-2 hover:text-ink transition-colors duration-200">All Products</Link>
-            <Link to="/privacy"  className="font-poppins text-[13px] text-ink-2 hover:text-ink transition-colors duration-200">Privacy Policy</Link>
-            <Link to="/terms"    className="font-poppins text-[13px] text-ink-2 hover:text-ink transition-colors duration-200">Terms</Link>
-          </div>
-        </nav>
-      </footer>
-    </div>
+      </div>
+    </>
   );
 }
 

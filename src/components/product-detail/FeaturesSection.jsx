@@ -35,7 +35,7 @@ export default function FeaturesSection({ features }) {
 
   // Responsive columns: ≤4 items → 4-col max, 5–8 → 4-col, 9+ → keep 4-col with wrap
   return (
-    <section aria-labelledby="features-heading" className="mt-12 flex flex-col gap-5">
+    <section aria-labelledby="features-heading" className="mt-16 flex flex-col gap-5">
       <SectionHeading id="features-heading">Features</SectionHeading>
       <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
         {features.map((f) => (
@@ -43,7 +43,7 @@ export default function FeaturesSection({ features }) {
             key={f.title}
             className="card rounded-2xl p-5 flex flex-col gap-3 hover:shadow-md transition-shadow duration-200"
           >
-            <div className="w-9 h-9 rounded-xl bg-violet-50 border border-violet-200 flex items-center justify-center text-violet-600">
+            <div className="w-9 h-9 rounded-xl bg-surface border border-line-2 flex items-center justify-center text-ink-2">
               <FeatureIcon name={f.icon} />
             </div>
             <h3 className="font-poppins font-semibold text-ink text-[14px] leading-snug">{f.title}</h3>

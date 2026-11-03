@@ -4,10 +4,10 @@ export default function AboutSection({ product }) {
   if (!product.description) return null;
 
   return (
-    <div className="grid lg:grid-cols-3 gap-8">
+    <div className="grid lg:grid-cols-3 gap-8 mt-12">
       {/* Description — 2/3 */}
       <section aria-labelledby="about-heading" className="lg:col-span-2 flex flex-col gap-4">
-        <SectionHeading id="about-heading">About This App</SectionHeading>
+        <SectionHeading id="about-heading">About this app</SectionHeading>
         <div className="card rounded-2xl p-7">
           {product.description.split("\n\n").map((para, i) => (
             <p
@@ -22,7 +22,7 @@ export default function AboutSection({ product }) {
 
       {/* Quick info — 1/3 */}
       <aside aria-labelledby="quickinfo-heading" className="flex flex-col gap-4">
-        <SectionHeading id="quickinfo-heading">Quick Info</SectionHeading>
+        <SectionHeading id="quickinfo-heading">Quick info</SectionHeading>
         <div className="card rounded-2xl p-6 flex flex-col gap-4">
           {product.category && (
             <>
@@ -30,7 +30,7 @@ export default function AboutSection({ product }) {
                 <p className="font-poppins text-[11px] uppercase tracking-widest text-ink-3 mb-1">Category</p>
                 <p className="font-poppins text-[14px] text-ink font-medium">{product.category}</p>
               </div>
-              <div className="h-px bg-slate-100" />
+              <div className="h-px bg-line" />
             </>
           )}
           {product.pricing?.[0] && (
@@ -42,16 +42,16 @@ export default function AboutSection({ product }) {
                   <span className="text-ink-3 font-normal text-[12px]">/ {product.pricing[0].period}</span>
                 </p>
               </div>
-              <div className="h-px bg-slate-100" />
+              <div className="h-px bg-line" />
             </>
           )}
           {product.installationGuide?.length > 0 && (
             <>
               <div>
-                <p className="font-poppins text-[11px] uppercase tracking-widest text-ink-3 mb-1">Install Steps</p>
+                <p className="font-poppins text-[11px] uppercase tracking-widest text-ink-3 mb-1">Install steps</p>
                 <p className="font-poppins text-[14px] text-ink font-medium">{product.installationGuide.length} steps</p>
               </div>
-              <div className="h-px bg-slate-100" />
+              <div className="h-px bg-line" />
             </>
           )}
           <div>

@@ -12,9 +12,9 @@ function FactorBar({ max, tiers }) {
     <div className="flex flex-col gap-1.5 mt-2">
       {tiers.map((t) => (
         <div key={t.condition} className="flex items-center gap-2">
-          <div className="flex-1 h-1.5 rounded-full bg-slate-100 overflow-hidden">
+          <div className="flex-1 h-1.5 rounded-full bg-surface overflow-hidden">
             <div
-              className="h-full rounded-full bg-gradient-to-r from-violet-400 to-fuchsia-400"
+              className="h-full rounded-full bg-ink"
               style={{ width: `${(t.points / max) * 100}%` }}
             />
           </div>
@@ -34,7 +34,7 @@ function RiskScoreCard({ riskScore }) {
   return (
     <div className="card rounded-2xl p-6 flex flex-col gap-5">
       <div>
-        <h3 className="font-poppins font-bold text-ink text-[16px]">{riskScore.title}</h3>
+        <h3 className="font-poppins font-semibold text-ink text-[16px]">{riskScore.title}</h3>
         <p className="font-poppins text-[13px] text-ink-2 mt-1 leading-relaxed">{riskScore.summary}</p>
       </div>
 
@@ -43,7 +43,7 @@ function RiskScoreCard({ riskScore }) {
           <div key={f.name}>
             <div className="flex items-center justify-between mb-1">
               <span className="font-poppins font-semibold text-ink text-[13px]">{f.name}</span>
-              <span className="font-poppins text-[11px] font-semibold text-violet-600 bg-violet-50 border border-violet-200 px-2 py-0.5 rounded-full">
+              <span className="font-poppins text-[11px] font-semibold text-ink-2 bg-surface border border-line-2 px-2 py-0.5 rounded-full">
                 max {f.max} pts
               </span>
             </div>
@@ -77,13 +77,13 @@ function ResolutionTimeCard({ resolutionTime }) {
   return (
     <div className="card rounded-2xl p-6 flex flex-col gap-5">
       <div>
-        <h3 className="font-poppins font-bold text-ink text-[16px]">{resolutionTime.title}</h3>
+        <h3 className="font-poppins font-semibold text-ink text-[16px]">{resolutionTime.title}</h3>
         <p className="font-poppins text-[13px] text-ink-2 mt-1 leading-relaxed">{resolutionTime.summary}</p>
       </div>
 
       <div className="flex flex-col gap-4">
         {resolutionTime.howMeasured.map((m) => (
-          <div key={m.metric} className="border-l-2 border-violet-200 pl-4">
+          <div key={m.metric} className="border-l-2 border-line-2 pl-4">
             <p className="font-poppins font-semibold text-ink text-[13px]">{m.metric}</p>
             <p className="font-poppins text-[12px] text-brand mt-0.5 font-medium">{m.formula}</p>
             <p className="font-poppins text-[11px] text-ink-3 mt-0.5 leading-relaxed">{m.note}</p>
@@ -97,7 +97,7 @@ function ResolutionTimeCard({ resolutionTime }) {
           {resolutionTime.slaThresholds.map((s) => (
             <div
               key={s.priority}
-              className="flex items-center justify-between bg-slate-50 rounded-xl px-3 py-2 border border-slate-200"
+              className="flex items-center justify-between bg-surface rounded-xl px-3 py-2 border border-line"
             >
               <span className="font-poppins text-[13px] font-semibold text-ink">{s.priority}</span>
               <span className="font-poppins text-[12px] text-emerald-700 font-semibold bg-emerald-50 border border-emerald-200 px-2 py-0.5 rounded-full">
@@ -122,8 +122,8 @@ export default function MethodologySection({ methodology }) {
   const { riskScore, resolutionTime } = methodology;
 
   return (
-    <section aria-labelledby="methodology-heading" className="mt-12 flex flex-col gap-5">
-      <SectionHeading id="methodology-heading">How Metrics Are Calculated</SectionHeading>
+    <section aria-labelledby="methodology-heading" className="mt-16 flex flex-col gap-5">
+      <SectionHeading id="methodology-heading">How metrics are calculated</SectionHeading>
       <div className="grid lg:grid-cols-2 gap-6">
         {riskScore && <RiskScoreCard riskScore={riskScore} />}
         {resolutionTime && <ResolutionTimeCard resolutionTime={resolutionTime} />}

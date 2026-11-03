@@ -1,7 +1,6 @@
 const Section = ({ title, children }) => (
   <div className="mb-8">
     <h2 className="font-poppins font-semibold text-[17px] text-ink mb-3 flex items-center gap-2">
-      <span className="w-1 h-4 rounded-full bg-gradient-to-b from-violet-500 to-fuchsia-500 inline-block flex-shrink-0" />
       {title}
     </h2>
     <div className="font-poppins text-[14px] text-ink-2 leading-relaxed space-y-3 pl-3">
@@ -14,7 +13,7 @@ const BulletList = ({ items }) => (
   <ul className="space-y-1.5 mt-1">
     {items.map((item, i) => (
       <li key={i} className="flex items-start gap-2">
-        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-500/70 flex-shrink-0" />
+        <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-ink-3 flex-shrink-0" />
         <span>{item}</span>
       </li>
     ))}
@@ -23,7 +22,7 @@ const BulletList = ({ items }) => (
 
 const BoldItem = ({ label, children }) => (
   <div className="flex items-start gap-2">
-    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-violet-500/70 flex-shrink-0" />
+    <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-ink-3 flex-shrink-0" />
     <span>
       <span className="text-ink font-medium">{label}: </span>
       {children}
@@ -53,7 +52,7 @@ function TermsAndConditions() {
   return (
     <div className="font-poppins">
       {/* Header */}
-      <div className="mb-8 pb-6 border-b border-slate-200">
+      <div className="mb-8 pb-6 border-b border-line">
         <h1 className="font-poppins font-bold text-[26px] sm:text-[30px] text-ink mb-1">
           Terms &amp; <span className="text-gradient">Conditions</span>
         </h1>
@@ -61,7 +60,7 @@ function TermsAndConditions() {
       </div>
 
       {/* Preamble */}
-      <div className="mb-8 p-4 rounded-xl bg-slate-50 border border-slate-200">
+      <div className="mb-8 p-4 rounded-xl bg-surface border border-line">
         <h2 className="font-poppins font-semibold text-[15px] text-ink mb-2">Preamble</h2>
         <p className="text-[14px] text-ink-2 leading-relaxed">
           <span className="text-gradient font-semibold">Brainz-Dev</span> ("we," "us," or

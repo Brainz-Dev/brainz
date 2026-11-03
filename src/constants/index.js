@@ -1,4 +1,4 @@
-import { send, shield, star, monday, fw, shopify, zoho } from "../assets";
+import { monday, fw, shopify, zoho } from "../assets";
 
 export const navLinks = [
   { id: "home", title: "Home" },
@@ -11,7 +11,6 @@ export const navLinks = [
 export const features = [
   {
     id: "feature-1",
-    icon: star,
     tag: "Integration",
     title: "SaaS Integration",
     content:
@@ -19,7 +18,6 @@ export const features = [
   },
   {
     id: "feature-2",
-    icon: shield,
     tag: "Development",
     title: "Custom App Development",
     content:
@@ -27,7 +25,6 @@ export const features = [
   },
   {
     id: "feature-3",
-    icon: send,
     tag: "Automation",
     title: "Workflow Automation",
     content:
@@ -35,7 +32,6 @@ export const features = [
   },
   {
     id: "feature-4",
-    icon: shield,
     tag: "API",
     title: "API Development",
     content:
@@ -43,7 +39,6 @@ export const features = [
   },
   {
     id: "feature-5",
-    icon: star,
     tag: "Data",
     title: "Data Pipelines",
     content:
@@ -51,7 +46,6 @@ export const features = [
   },
   {
     id: "feature-6",
-    icon: send,
     tag: "Partnership",
     title: "Ongoing Partnership",
     content:
@@ -60,10 +54,10 @@ export const features = [
 ];
 
 export const clients = [
-  { id: "client-1", logo: monday },
-  { id: "client-2", logo: fw },
-  { id: "client-3", logo: shopify },
-  { id: "client-4", logo: zoho },
+  { id: "client-1", logo: fw,      name: "Freshworks" },
+  { id: "client-2", logo: zoho,    name: "Zoho" },
+  { id: "client-3", logo: shopify, name: "Shopify" },
+  { id: "client-4", logo: monday,  name: "monday.com" },
 ];
 
 export const processSteps = [
@@ -94,59 +88,25 @@ export const testimonials = [
   {
     id: "t-1",
     quote:
-      "Brainz-Dev automated our Salesforce to HubSpot sync in under two weeks. We reclaimed 20+ hours of manual work every single week. Genuinely transformative for our revenue ops team.",
+      "Zoho Books for Freshdesk put every customer's invoices and payment status right inside the ticket. Our agents stopped switching tabs to answer billing questions, and first-response time on billing tickets dropped noticeably.",
     name: "Sarah Johnson",
-    role: "CTO",
+    role: "Head of Customer Support",
     initial: "S",
-    color: "from-violet-500 to-purple-600",
   },
   {
     id: "t-2",
     quote:
-      "Their custom Jira extension cut our sprint planning sessions from 3 hours down to 20 minutes. The ROI was obvious within the first month. Every engineer on our team loves it.",
+      "Kanban Pro turned our Zoho Desk queue into a board the whole team can read at a glance. Dragging a card updates the ticket instantly, and the overdue badges mean nothing slips through anymore.",
     name: "Marcus Reid",
-    role: "VP Engineering",
+    role: "Support Team Lead",
     initial: "M",
-    color: "from-fuchsia-500 to-pink-600",
   },
   {
     id: "t-3",
     quote:
-      "We went from concept to production in just 3 weeks. The team's technical depth, communication, and ownership throughout the entire process were all exceptional.",
+      "Insight Lens shows us which product is driving complaints in Freshdesk before it turns into an escalation. The risk score gave our leads a shared view of where to put agents first.",
     name: "Priya Mehta",
-    role: "Founder & CEO",
+    role: "Customer Experience Manager",
     initial: "P",
-    color: "from-indigo-500 to-violet-600",
-  },
-];
-
-export const siteStats = [
-  {
-    value: 500,
-    isDecimal: false,
-    suffix: "K+",
-    label: "API Calls/Day",
-    sub: "Across client systems",
-  },
-  {
-    value: 50,
-    isDecimal: false,
-    suffix: "+",
-    label: "Integrations Built",
-    sub: "Tools connected",
-  },
-  {
-    value: 99.9,
-    isDecimal: true,
-    suffix: "%",
-    label: "Uptime SLA",
-    sub: "Guaranteed reliability",
-  },
-  {
-    value: 3,
-    isDecimal: false,
-    suffix: "wk",
-    label: "Avg. Ship Time",
-    sub: "Idea to production",
   },
 ];

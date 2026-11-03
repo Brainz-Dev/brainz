@@ -1,72 +1,53 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 /* ── Design Tokens ────────────────────────────────────────────
-   All colours, shadows and radii are declared here.
-   Components consume these tokens, never raw hex values.
-   Dark mode: add [data-theme="dark"] to <html> to activate.
+   Light, neutral theme in the Notion / Attio tradition:
+   warm off-white surfaces, near-black text and buttons, hairline
+   borders, one restrained accent. Colour comes from product UI,
+   not decoration. Inter is loaded from index.html.
 ────────────────────────────────────────────────────────────── */
 :root {
+  color-scheme: light;
+
   /* Backgrounds */
-  --bg-page:      #FFFFFF;
-  --bg-secondary: #F8FAFC;
-  --bg-card:      #FFFFFF;
-  --bg-brand-tint: #EDE9FE;   /* violet-100 */
+  --bg-page:       #FFFFFF;
+  --bg-secondary:  #F7F7F5;
+  --bg-card:       #FFFFFF;
+  --bg-brand-tint: #F1F1EF;
 
   /* Text */
-  --text-primary:   #0F172A;
-  --text-secondary: #475569;
-  --text-muted:     #94A3B8;
+  --text-primary:   #191919;
+  --text-secondary: #5F5E5B;
+  --text-muted:     #8F8E8A;
   --text-on-brand:  #FFFFFF;
-  --text-brand:     #6D28D9;
+  --text-brand:     #191919;
 
   /* Border */
-  --border:       #E2E8F0;
-  --border-strong:#CBD5E1;
-  --border-brand: rgba(124, 58, 237, 0.25);
+  --border:        #EBEBE9;
+  --border-strong: #DCDCD9;
+  --border-brand:  #C9C9C5;
 
-  /* Brand */
-  --brand:        #7C3AED;
-  --brand-hover:  #6D28D9;
+  /* Brand / accent */
+  --brand:        #191919;
+  --brand-hover:  #000000;
+  --accent:       #2F6FEB;
 
   /* Shadows */
-  --shadow-sm:   0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04);
-  --shadow-md:   0 4px 16px rgba(15,23,42,0.08), 0 1px 4px rgba(15,23,42,0.04);
-  --shadow-lg:   0 8px 32px rgba(15,23,42,0.10), 0 2px 8px rgba(15,23,42,0.04);
-  --shadow-brand:0 4px 24px rgba(124,58,237,0.22), 0 1px 6px rgba(124,58,237,0.10);
+  --shadow-sm:    0 1px 2px rgba(25,25,25,0.05);
+  --shadow-md:    0 2px 8px rgba(25,25,25,0.06), 0 1px 2px rgba(25,25,25,0.04);
+  --shadow-lg:    0 8px 24px rgba(25,25,25,0.07), 0 2px 6px rgba(25,25,25,0.04);
+  --shadow-brand: 0 4px 16px rgba(25,25,25,0.10);
 
   /* Transitions */
   --transition-fast:   150ms ease;
   --transition-normal: 220ms ease;
 }
 
-/* Dark mode tokens — toggled with [data-theme="dark"] on <html> */
-[data-theme="dark"] {
-  --bg-page:       #070711;
-  --bg-secondary:  #0d0d1a;
-  --bg-card:       rgba(255,255,255,0.035);
-  --bg-brand-tint: rgba(124,58,237,0.15);
-  --text-primary:  #F8FAFC;
-  --text-secondary:#94A3B8;
-  --text-muted:    #64748B;
-  --text-on-brand: #FFFFFF;
-  --text-brand:    #a78bfa;
-  --border:        rgba(255,255,255,0.08);
-  --border-strong: rgba(255,255,255,0.14);
-  --border-brand:  rgba(124,58,237,0.35);
-  --shadow-sm:     0 1px 3px rgba(0,0,0,0.25);
-  --shadow-md:     0 4px 16px rgba(0,0,0,0.35);
-  --shadow-lg:     0 8px 32px rgba(0,0,0,0.50);
-  --shadow-brand:  0 4px 24px rgba(124,58,237,0.40);
-}
-
 /* ── Base ─────────────────────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
-  scroll-behavior: smooth;
 }
 
 html {
@@ -76,81 +57,105 @@ html {
 body {
   background-color: var(--bg-page);
   color: var(--text-primary);
-  font-family: "Poppins", sans-serif;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv11", "ss01";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ── Brand gradient text ──────────────────────────────────── */
-.text-gradient {
-  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #9333ea 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+::selection {
+  background: rgba(47,111,235,0.18);
 }
 
+/* ── Headline text treatments ─────────────────────────────── */
+/* Legacy gradient classes now render solid — no gradient text */
+.text-gradient,
 .text-gradient-animated {
-  background: linear-gradient(
-    270deg,
-    #5b21b6,
-    #7c3aed,
-    #9333ea,
-    #6d28d9,
-    #5b21b6
-  );
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  animation: gradient-x 5s ease infinite;
+  color: var(--text-primary);
+}
+
+/* Second line of a two-tone headline */
+.text-quiet {
+  color: #A3A29E;
 }
 
 /* ── Card surface ─────────────────────────────────────────── */
-.card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  border-radius: 16px;
-}
-
-.card-md {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-md);
-  border-radius: 16px;
-}
-
-/* Legacy class — maps to light card */
-.glass-card {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-
+.card,
+.card-md,
+.glass-card,
 .glass-card-strong {
   background: var(--bg-card);
-  border: 1px solid var(--border-strong);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  border-radius: 16px;
+}
+
+.card-md,
+.glass-card-strong {
   box-shadow: var(--shadow-md);
+}
+
+/* Product-UI frame: off-white bezel around a white window */
+.bezel {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 8px;
+}
+
+.window {
+  background: #FFFFFF;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  box-shadow: 0 24px 64px rgba(25,25,25,0.08), 0 4px 12px rgba(25,25,25,0.04);
+  overflow: hidden;
+}
+
+/* Hero product shot — 3D tilt that eases flatter on hover */
+.hero-stage {
+  perspective: 2400px;
+}
+
+.hero-tilt {
+  transform: rotateX(16deg) rotateY(-14deg) rotateZ(4deg);
+  transform-origin: 50% 0%;
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-stage:hover .hero-tilt {
+  transform: rotateX(8deg) rotateY(-6deg) rotateZ(2deg);
+}
+
+/* Fade the bottom edge into the page */
+.hero-fade {
+  mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, #000 62%, transparent 100%);
+}
+
+@media (max-width: 767px) {
+  .hero-tilt,
+  .hero-stage:hover .hero-tilt {
+    transform: rotateX(10deg);
+  }
 }
 
 /* ── Navbar ───────────────────────────────────────────────── */
+/* The one place glass is used — a quiet frosted bar */
 .navbar-glass {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255,255,255,0.8);
+  border-bottom: 1px solid transparent;
+  backdrop-filter: blur(12px) saturate(180%);
+  -webkit-backdrop-filter: blur(12px) saturate(180%);
+  transition: border-color var(--transition-normal);
 }
 
-/* ── Subtle background pattern ────────────────────────────── */
+.navbar-glass.is-scrolled {
+  border-bottom-color: var(--border);
+}
+
+/* Legacy — decorative background removed */
 .hero-grid-bg {
-  background-image: radial-gradient(
-    circle,
-    rgba(124, 58, 237, 0.06) 1px,
-    transparent 1px
-  );
-  background-size: 40px 40px;
-  mask-image: radial-gradient(ellipse 75% 60% at 50% 0%, black 0%, transparent 100%);
-  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 0%, black 0%, transparent 100%);
+  display: none;
 }
 
 /* ── Service / Feature card ───────────────────────────────── */
@@ -159,95 +164,81 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
   transition: border-color var(--transition-normal),
-              box-shadow var(--transition-normal),
-              transform var(--transition-normal);
+              box-shadow var(--transition-normal);
 }
 
 .feature-card:hover {
-  border-color: var(--border-brand);
-  box-shadow: var(--shadow-brand);
-  transform: translateY(-4px);
+  border-color: var(--border-strong);
+  box-shadow: var(--shadow-md);
 }
 
 /* ── Form inputs ──────────────────────────────────────────── */
-.input-field {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
+.input-field,
+.input-glow {
+  background: #FFFFFF;
+  border: 1px solid var(--border-strong);
   color: var(--text-primary);
-  font-family: "Poppins", sans-serif;
-  border-radius: 10px;
-  padding: 12px 16px;
-  width: 100%;
-  font-size: 15px;
+  font-family: inherit;
   transition: border-color var(--transition-fast),
               box-shadow var(--transition-fast);
 }
 
-.input-field::placeholder {
-  color: var(--text-muted);
+.input-field {
+  border-radius: 8px;
+  padding: 10px 14px;
+  width: 100%;
+  font-size: 15px;
 }
 
-.input-field:focus {
-  outline: none;
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.10);
-}
-
-/* Legacy alias */
-.input-glow {
-  background: var(--bg-card);
-  border: 1px solid var(--border);
-  color: var(--text-primary);
-  font-family: "Poppins", sans-serif;
-  transition: border-color var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-}
-
+.input-field::placeholder,
 .input-glow::placeholder {
   color: var(--text-muted);
 }
 
+.input-field:focus,
 .input-glow:focus {
   outline: none;
-  border-color: var(--brand);
-  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.10);
-  background: var(--bg-card);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(47,111,235,0.15);
 }
 
 /* ── Buttons ──────────────────────────────────────────────── */
-.btn-outline {
-  background: transparent;
-  border: 1.5px solid var(--border-strong);
-  color: var(--text-secondary);
-  transition: all var(--transition-fast);
-}
-
-.btn-outline:hover {
-  background: var(--bg-secondary);
-  border-color: var(--brand);
-  color: var(--brand);
-}
-
 .btn-brand {
-  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #9333ea 100%);
+  background: var(--brand);
   color: #FFFFFF;
-  font-weight: 600;
-  transition: opacity var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast);
+  font-weight: 500;
+  box-shadow: 0 1px 2px rgba(25,25,25,0.12), inset 0 1px 0 rgba(255,255,255,0.10);
+  transition: background var(--transition-fast);
 }
 
 .btn-brand:hover {
-  opacity: 0.92;
-  box-shadow: var(--shadow-brand);
+  background: #333331;
+}
+
+.btn-outline,
+.btn-glass {
+  background: #FFFFFF;
+  border: 1px solid var(--border-strong);
+  color: var(--text-primary);
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.btn-outline:hover,
+.btn-glass:hover {
+  background: var(--bg-secondary);
 }
 
 /* ── Client logos ─────────────────────────────────────────── */
 .client-logo {
-  filter: grayscale(100%) contrast(0.7) brightness(0.85);
+  filter: grayscale(100%);
   opacity: 0.55;
   transition: filter 0.3s ease, opacity 0.3s ease;
 }
 
 .client-logo:hover {
-  filter: grayscale(0%) contrast(1) brightness(1);
+  filter: grayscale(0%);
   opacity: 1;
 }
 
@@ -257,11 +248,10 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
   border-radius: 16px;
-  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  transition: box-shadow var(--transition-normal);
 }
 
 .testimonial-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-md);
 }
 
@@ -269,31 +259,25 @@ body {
 .process-connector {
   background: repeating-linear-gradient(
     90deg,
-    var(--border-brand) 0,
-    var(--border-brand) 5px,
+    var(--border-strong) 0,
+    var(--border-strong) 5px,
     transparent 5px,
-    transparent 14px
+    transparent 12px
   );
-  height: 2px;
+  height: 1px;
 }
 
 /* ── CTA section ──────────────────────────────────────────── */
 .cta-border-line {
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(124, 58, 237, 0.25),
-    rgba(162, 28, 175, 0.20),
-    transparent
-  );
+  background: var(--border);
   height: 1px;
 }
 
 /* ── Icon container box ───────────────────────────────────── */
 .icon-box {
-  background: var(--bg-brand-tint);
-  border: 1px solid rgba(124, 58, 237, 0.20);
-  border-radius: 12px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 10px;
 }
 
 /* ── Trust / feature badge ────────────────────────────────── */
@@ -302,36 +286,32 @@ body {
   border: 1px solid var(--border);
   box-shadow: var(--shadow-sm);
   border-radius: 16px;
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
+  transition: box-shadow var(--transition-normal);
 }
 
 .trust-card:hover {
   box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
 }
 
 /* ── Section label (eyebrow text) ─────────────────────────── */
 .section-label {
-  font-family: "Poppins", sans-serif;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--brand);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
 }
 
 /* ── Section heading ──────────────────────────────────────── */
 .section-heading {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
+  font-weight: 600;
   color: var(--text-primary);
-  line-height: 1.12;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
 /* ── Focus ring (WCAG AA) ─────────────────────────────────── */
 :focus-visible {
-  outline: 2px solid var(--brand);
-  outline-offset: 3px;
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
   border-radius: 4px;
 }
 
@@ -342,26 +322,20 @@ body {
   border-radius: 14px;
   padding: 28px 20px;
   text-align: center;
-  transition: box-shadow var(--transition-normal), transform var(--transition-normal);
-}
-
-.stat-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
 }
 
 /* ── Mobile menu panel ────────────────────────────────────── */
 .mobile-menu {
-  background: var(--bg-card);
+  background: #FFFFFF;
   border: 1px solid var(--border);
   box-shadow: var(--shadow-lg);
-  border-radius: 16px;
+  border-radius: 12px;
 }
 
 /* ── Scroll fade-in utility ───────────────────────────────── */
 .scroll-hidden {
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(12px);
 }
 
 .scroll-visible {
@@ -371,17 +345,14 @@ body {
 }
 
 /* ── Animations ───────────────────────────────────────────── */
-@keyframes gradient-x {
-  "0%, 100%" { background-position: 0% 50%; }
-  "50%"      { background-position: 100% 50%; }
-}
-
 @keyframes marquee {
-  "0%"   { transform: translateX(0); }
-  "100%" { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
-@keyframes fade-in-up {
-  "0%"   { opacity: 0; transform: translateY(20px); }
-  "100%" { opacity: 1; transform: translateY(0); }
+/* ── Reduced motion ───────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .animate-marquee { animation: none !important; }
+  .hero-tilt { transition: none; }
 }

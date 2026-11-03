@@ -6,10 +6,10 @@ export default function VideoSection({ videoId, title }) {
   return (
     <section
       aria-labelledby="video-heading"
-      className="mt-12 flex flex-col gap-5"
+      className="mt-16 flex flex-col gap-5"
     >
       <SectionHeading id="video-heading">
-        {title ?? "Watch It in Action"}
+        {title ?? "Watch it in action"}
       </SectionHeading>
       <div className="card rounded-2xl overflow-hidden">
         {/* 16:9 responsive wrapper */}

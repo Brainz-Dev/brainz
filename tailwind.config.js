@@ -5,52 +5,54 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* ── Page structure ────────────────────────────────────── */
+        /* ── Page structure (light, neutral) ───────────────────── */
         primary:   "#FFFFFF",       // page background
-        surface:   "#F8FAFC",       // secondary background / section alternation
+        surface:   "#F7F7F5",       // warm off-white — section alternation, bezels
         card:      "#FFFFFF",       // card background
         /* ── Text ──────────────────────────────────────────────── */
-        "ink":     "#0F172A",       // primary text
-        "ink-2":   "#475569",       // secondary text
-        "ink-3":   "#94A3B8",       // muted / placeholder
+        "ink":     "#191919",       // primary text
+        "ink-2":   "#5F5E5B",       // secondary text
+        "ink-3":   "#8F8E8A",       // muted / placeholder
         /* ── Border ────────────────────────────────────────────── */
-        "line":    "#E2E8F0",       // default border
-        "line-2":  "#CBD5E1",       // strong border
-        /* ── Brand ─────────────────────────────────────────────── */
-        brand:     "#7C3AED",
-        "brand-hover": "#6D28D9",
-        "brand-light": "#EDE9FE",   // violet-100 — tinted bg boxes
+        "line":    "#EBEBE9",       // default border
+        "line-2":  "#DCDCD9",       // strong border
+        /* ── Brand — near-black; colour is used sparingly ─────── */
+        brand:     "#191919",
+        "brand-hover": "#000000",
+        "brand-light": "#F1F1EF",   // neutral tinted bg boxes
+        accent:    "#2F6FEB",       // links, focus — the only hue
         /* ── Semantic ──────────────────────────────────────────── */
-        success:   "#16A34A",
-        warning:   "#F59E0B",
-        danger:    "#DC2626",
+        success:   "#1F8A4C",
+        warning:   "#B7791F",
+        danger:    "#D93636",
         /* ── Legacy aliases kept so old refs don't break ───────── */
         dimWhite:  "rgba(255,255,255,0.65)",
-        dimBlue:   "rgba(109,40,217,0.1)",
+        dimBlue:   "rgba(25,25,25,0.06)",
       },
       fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
+        sans:    ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        /* Legacy alias — existing `font-poppins` classes now render Inter */
+        poppins: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
       },
       backgroundImage: {
         "brand-gradient":
-          "linear-gradient(135deg, #5b21b6 0%, #7c3aed 50%, #9333ea 100%)",
+          "linear-gradient(180deg, #2A2A2A 0%, #191919 100%)",
         "brand-gradient-soft":
-          "linear-gradient(135deg, rgba(91,33,182,0.08) 0%, rgba(147,51,234,0.05) 100%)",
+          "linear-gradient(180deg, #FAFAF9 0%, #F4F4F2 100%)",
         "surface-gradient":
-          "linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%)",
+          "linear-gradient(180deg, #FFFFFF 0%, #F7F7F5 100%)",
       },
       boxShadow: {
-        /* light-theme card shadows */
-        sm:    "0 1px 3px rgba(15,23,42,0.06), 0 1px 2px rgba(15,23,42,0.04)",
-        md:    "0 4px 16px rgba(15,23,42,0.08), 0 1px 4px rgba(15,23,42,0.04)",
-        lg:    "0 8px 32px rgba(15,23,42,0.10), 0 2px 8px rgba(15,23,42,0.04)",
-        xl:    "0 16px 48px rgba(15,23,42,0.12), 0 4px 12px rgba(15,23,42,0.05)",
-        brand: "0 4px 24px rgba(124,58,237,0.22), 0 1px 6px rgba(124,58,237,0.12)",
-        "brand-lg": "0 8px 40px rgba(124,58,237,0.30)",
+        sm:    "0 1px 2px rgba(25,25,25,0.05)",
+        md:    "0 2px 8px rgba(25,25,25,0.06), 0 1px 2px rgba(25,25,25,0.04)",
+        lg:    "0 8px 24px rgba(25,25,25,0.07), 0 2px 6px rgba(25,25,25,0.04)",
+        xl:    "0 24px 64px rgba(25,25,25,0.10), 0 4px 12px rgba(25,25,25,0.05)",
+        brand: "0 1px 2px rgba(25,25,25,0.12), inset 0 1px 0 rgba(255,255,255,0.12)",
+        "brand-lg": "0 8px 24px rgba(25,25,25,0.16)",
+        glass: "0 1px 0 rgba(25,25,25,0.04)",
         /* legacy kept */
-        glass: "0 8px 32px 0 rgba(109,40,217,0.15)",
-        glow:  "0 0 60px rgba(124,58,237,0.5)",
-        card:  "0 4px 28px rgba(0,0,0,0.55)",
+        glow:  "0 0 0 1px rgba(25,25,25,0.06)",
+        card:  "0 1px 2px rgba(25,25,25,0.05)",
       },
       borderRadius: {
         "2xl": "16px",

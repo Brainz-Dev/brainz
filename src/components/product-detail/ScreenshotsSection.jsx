@@ -1,17 +1,6 @@
 import { useState, useEffect, useCallback } from "react";
 import SectionHeading from "./SectionHeading";
 
-const GRADIENTS = [
-  "from-violet-100 to-fuchsia-100",
-  "from-indigo-100 to-violet-100",
-  "from-fuchsia-100 to-pink-100",
-  "from-cyan-100 to-indigo-100",
-  "from-emerald-100 to-cyan-100",
-  "from-amber-100 to-orange-100",
-  "from-sky-100 to-blue-100",
-  "from-rose-100 to-pink-100",
-];
-
 function Lightbox({ screenshots, index, onClose, onPrev, onNext }) {
   const s = screenshots[index];
 
@@ -120,8 +109,8 @@ export default function ScreenshotsSection({ screenshots }) {
 
   return (
     <>
-      <section aria-labelledby="screenshots-heading" className="mt-12 flex flex-col gap-5">
-        <SectionHeading id="screenshots-heading">App Views</SectionHeading>
+      <section aria-labelledby="screenshots-heading" className="mt-16 flex flex-col gap-5">
+        <SectionHeading id="screenshots-heading">App views</SectionHeading>
         <div className={`grid ${colClass} gap-5`}>
           {screenshots.map((s, i) => (
             <div
@@ -130,18 +119,18 @@ export default function ScreenshotsSection({ screenshots }) {
             >
               {s.image ? (
                 <button
-                  className="w-full text-left relative focus:outline-none focus-visible:ring-2 focus-visible:ring-violet-500"
+                  className="w-full text-left relative focus:outline-none focus-visible:ring-2 focus-visible:ring-accent"
                   onClick={() => setLightboxIndex(i)}
                   aria-label={`View ${s.title} full size`}
                 >
                   <img
                     src={s.image}
                     alt={s.title}
-                    className="w-full object-cover border-b border-slate-100 transition-opacity duration-200 group-hover:opacity-90"
+                    className="w-full object-cover border-b border-line transition-opacity duration-200 group-hover:opacity-90"
                     style={{ maxHeight: 200 }}
                   />
                   {/* Hover overlay */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 border-b border-slate-100" style={{ background: "rgba(0,0,0,0.35)" }}>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 border-b border-line" style={{ background: "rgba(0,0,0,0.35)" }}>
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 15.803a7.5 7.5 0 0010.607 10.607zM10.5 7.5v6m3-3h-6" />
@@ -150,8 +139,8 @@ export default function ScreenshotsSection({ screenshots }) {
                   </div>
                 </button>
               ) : (
-                <div className={`h-40 bg-gradient-to-br ${GRADIENTS[i % GRADIENTS.length]} flex items-center justify-center border-b border-slate-100`}>
-                  <span className="font-poppins font-bold text-violet-200 text-7xl select-none" aria-hidden="true">
+                <div className="h-40 bg-surface flex items-center justify-center border-b border-line">
+                  <span className="font-poppins font-semibold text-line-2 text-7xl select-none" aria-hidden="true">
                     {i + 1}
                   </span>
                 </div>

@@ -3,7 +3,7 @@ import SectionHeading from "./SectionHeading";
 function StepCard({ step, title, body, link }) {
   return (
     <div className="card rounded-2xl p-6 flex gap-5">
-      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-gradient-to-br from-violet-600 to-fuchsia-600 flex items-center justify-center">
+      <div className="flex-shrink-0 w-9 h-9 rounded-xl bg-ink flex items-center justify-center">
         <span className="font-poppins font-bold text-white text-[13px]" aria-hidden="true">
           {step}
         </span>
@@ -30,8 +30,8 @@ export default function InstallGuide({ guide }) {
   if (!guide?.length) return null;
 
   return (
-    <section aria-labelledby="install-heading" className="mt-12 flex flex-col gap-5">
-      <SectionHeading id="install-heading">Installation Guide</SectionHeading>
+    <section aria-labelledby="install-heading" className="mt-16 flex flex-col gap-5">
+      <SectionHeading id="install-heading">Installation guide</SectionHeading>
       <ol className="grid grid-cols-1 sm:grid-cols-2 gap-4 list-none">
         {guide.map(({ step, title, body, link }) => (
           <li key={step}>

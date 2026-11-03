@@ -10,11 +10,11 @@ const serviceLinks = [
 ];
 
 const companyLinks = [
-  { label: "Home",         href: "#home" },
-  { label: "Services",     href: "#services" },
-  { label: "Our Process",  href: "#process" },
-  { label: "Testimonials", href: "#testimonials" },
-  { label: "Contact",      href: "#contact" },
+  { label: "Home",         href: "/#home" },
+  { label: "Services",     href: "/#services" },
+  { label: "Our Process",  href: "/#process" },
+  { label: "Testimonials", href: "/#testimonials" },
+  { label: "Contact",      href: "/#contact" },
 ];
 
 const SocialGithub = () => (
@@ -28,7 +28,7 @@ function FooterLink({ label, href }) {
     <li>
       <a
         href={href}
-        className="font-poppins text-[14px] text-ink-2 hover:text-brand transition-colors duration-150"
+        className="font-poppins text-[14px] text-ink-2 hover:text-ink transition-colors duration-150"
       >
         {label}
       </a>
@@ -38,7 +38,7 @@ function FooterLink({ label, href }) {
 
 function Footer() {
   return (
-    <footer className="pt-16 pb-8 border-t border-line" role="contentinfo">
+    <footer className="pt-16 pb-10 mt-8 border-t border-line" role="contentinfo">
       {/* Main grid */}
       <div className="grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-10 mb-14">
         {/* Brand column */}
@@ -50,8 +50,8 @@ function Footer() {
               aria-hidden="true"
               className="w-7 h-7 object-contain"
             />
-            <span className="font-poppins font-bold text-[17px] text-ink tracking-tight">
-              Brainz<span className="text-gradient">-Dev</span>
+            <span className="font-poppins font-semibold text-[16px] text-ink tracking-tight">
+              Brainz-Dev
             </span>
           </Link>
           <p className="font-poppins text-[14px] text-ink-2 leading-relaxed mb-6">
@@ -65,7 +65,7 @@ function Footer() {
               target="_blank"
               rel="noreferrer"
               aria-label="Brainz-Dev on GitHub"
-              className="w-8 h-8 rounded-lg border border-line flex items-center justify-center text-ink-2 hover:text-brand hover:border-[rgba(124,58,237,0.35)] hover:bg-brand-light transition-all duration-150"
+              className="w-8 h-8 rounded-lg border border-line flex items-center justify-center text-ink-2 hover:text-ink hover:border-line-2 hover:bg-surface transition-all duration-150"
             >
               <SocialGithub />
             </a>
@@ -74,19 +74,19 @@ function Footer() {
 
         {/* Services */}
         <div>
-          <h4 className="font-poppins font-semibold text-ink text-[12px] uppercase tracking-wider mb-5">
+          <h4 className="font-poppins font-medium text-ink text-[14px] mb-4">
             Services
           </h4>
           <ul className="flex flex-col gap-2.5">
             {serviceLinks.map((label) => (
-              <FooterLink key={label} label={label} href="#services" />
+              <FooterLink key={label} label={label} href="/#services" />
             ))}
           </ul>
         </div>
 
         {/* Company */}
         <div>
-          <h4 className="font-poppins font-semibold text-ink text-[12px] uppercase tracking-wider mb-5">
+          <h4 className="font-poppins font-medium text-ink text-[14px] mb-4">
             Company
           </h4>
           <ul className="flex flex-col gap-2.5">
@@ -98,14 +98,14 @@ function Footer() {
 
         {/* Contact & Legal */}
         <div>
-          <h4 className="font-poppins font-semibold text-ink text-[12px] uppercase tracking-wider mb-5">
-            Contact &amp; Legal
+          <h4 className="font-poppins font-medium text-ink text-[14px] mb-4">
+            Contact &amp; legal
           </h4>
           <ul className="flex flex-col gap-2.5">
             <li>
               <a
                 href="mailto:support@brainz-dev.com"
-                className="font-poppins text-[14px] text-ink-2 hover:text-brand transition-colors duration-150"
+                className="font-poppins text-[14px] text-ink-2 hover:text-ink transition-colors duration-150"
               >
                 support@brainz-dev.com
               </a>
@@ -113,7 +113,7 @@ function Footer() {
             <li>
               <Link
                 to="/products"
-                className="font-poppins text-[14px] text-ink-2 hover:text-brand transition-colors duration-150"
+                className="font-poppins text-[14px] text-ink-2 hover:text-ink transition-colors duration-150"
               >
                 Products
               </Link>
@@ -121,7 +121,7 @@ function Footer() {
             <li>
               <Link
                 to="/privacy"
-                className="font-poppins text-[14px] text-ink-2 hover:text-brand transition-colors duration-150"
+                className="font-poppins text-[14px] text-ink-2 hover:text-ink transition-colors duration-150"
               >
                 Privacy Policy
               </Link>
@@ -129,7 +129,7 @@ function Footer() {
             <li>
               <Link
                 to="/terms"
-                className="font-poppins text-[14px] text-ink-2 hover:text-brand transition-colors duration-150"
+                className="font-poppins text-[14px] text-ink-2 hover:text-ink transition-colors duration-150"
               >
                 Terms &amp; Conditions
               </Link>
@@ -142,10 +142,7 @@ function Footer() {
       <div className="h-px bg-line mb-6" aria-hidden="true" />
       <div className="flex sm:flex-row flex-col justify-between items-center gap-3">
         <p className="font-poppins text-[13px] text-ink-3">
-          © 2025 Brainz-Dev · All rights reserved.
-        </p>
-        <p className="font-poppins text-[12px] text-ink-3">
-          Made with ♥ for ambitious teams
+          © {new Date().getFullYear()} Brainz-Dev · All rights reserved.
         </p>
       </div>
     </footer>

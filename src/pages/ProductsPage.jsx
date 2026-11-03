@@ -1,5 +1,3 @@
-import Navbar      from "../components/Navbar";
-import Footer      from "../components/Footer";
 import ProductCard from "../components/ProductCard";
 import SEOHead     from "../components/SEOHead";
 import products    from "../data/products";
@@ -22,7 +20,7 @@ const jsonLd = {
 
 function ProductsPage() {
   return (
-    <div className="min-h-screen bg-primary overflow-x-hidden relative">
+    <>
       <SEOHead
         title="Products"
         description="Purpose-built apps and integrations for Freshdesk, Freshservice, and Zoho that supercharge your SaaS stack."
@@ -31,37 +29,27 @@ function ProductsPage() {
         jsonLdExtra={jsonLd}
       />
 
-      <div className="hero-grid-bg fixed inset-0 pointer-events-none z-0" aria-hidden="true" />
-
-      <header className="sticky top-0 z-50 navbar-glass" role="banner">
-        <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-          <Navbar />
-        </div>
-      </header>
-
-      <main id="main-content" className="relative z-10 max-w-[1280px] mx-auto px-6 sm:px-10" role="main">
+      <div className="max-w-[1200px] mx-auto px-6 sm:px-10">
         {/* Hero */}
-        <section aria-labelledby="products-heading" className="py-20 sm:py-28 text-center max-w-2xl mx-auto">
-          <span className="inline-block font-poppins text-[12px] font-semibold tracking-widest uppercase text-violet-400 mb-4">
-            What We&apos;ve Built
-          </span>
-          <h1 id="products-heading" className="font-poppins font-bold text-[36px] sm:text-[48px] text-white leading-tight mb-4">
-            Our <span className="text-gradient">Products</span>
+        <section aria-labelledby="products-heading" className="pt-16 sm:pt-24 pb-14 max-w-[680px]">
+          <p className="section-label mb-3">Products</p>
+          <h1 id="products-heading" className="section-heading font-poppins sm:text-[52px] text-[36px] mb-4">
+            Apps we built. <span className="text-quiet">Ready to install.</span>
           </h1>
-          <p className="font-poppins text-[16px] text-slate-400 leading-relaxed">
+          <p className="font-poppins text-[17px] text-ink-2 leading-[1.6]">
             Purpose-built apps and integrations that supercharge your SaaS stack.
             Click any product to see full details and installation instructions.
           </p>
         </section>
 
         {/* Product grid */}
-        <section aria-label="Product listings" className="pb-24">
+        <section aria-label="Product listings" className="pb-24 sm:pb-32">
           {products.length === 0 ? (
             <div className="text-center py-24">
-              <p className="font-poppins text-slate-500 text-[15px]">No products yet — check back soon.</p>
+              <p className="font-poppins text-ink-3 text-[15px]">No products yet — check back soon.</p>
             </div>
           ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
               {products.map((product) => (
                 <article key={product.id}>
                   <ProductCard product={product} />
@@ -70,12 +58,8 @@ function ProductsPage() {
             </div>
           )}
         </section>
-      </main>
-
-      <div className="max-w-[1280px] mx-auto px-6 sm:px-10">
-        <Footer />
       </div>
-    </div>
+    </>
   );
 }
 
