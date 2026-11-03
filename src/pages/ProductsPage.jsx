@@ -10,12 +10,12 @@ const breadcrumbs = [
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "@id": "https://brainz-dev.com/products/#webpage",
-  "url": "https://brainz-dev.com/products",
+  "@id": "https://www.brainz-dev.com/products/#webpage",
+  "url": "https://www.brainz-dev.com/products",
   "name": "Products | Brainz-Dev",
   "description": "Purpose-built apps and integrations for Freshdesk, Freshservice, and Zoho that supercharge your SaaS stack.",
-  "isPartOf": { "@id": "https://brainz-dev.com/#website" },
-  "publisher": { "@id": "https://brainz-dev.com/#organization" },
+  "isPartOf": { "@id": "https://www.brainz-dev.com/#website" },
+  "publisher": { "@id": "https://www.brainz-dev.com/#organization" },
 };
 
 function ProductsPage() {

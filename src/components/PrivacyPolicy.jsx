@@ -81,7 +81,7 @@ function PrivacyPolicy() {
           This Privacy Policy ("Policy") explains what personal data we collect,
           why we collect it, how we use and protect it, and the rights available
           to you. It applies to all visitors to{" "}
-          <span className="text-ink font-medium">https://brainz-dev.com</span>{" "}
+          <span className="text-ink font-medium">https://www.brainz-dev.com</span>{" "}
           ("Website"), all users who install or use our Applications, and anyone
           who contacts us.
         </p>
@@ -566,11 +566,11 @@ function PrivacyPolicy() {
           <BoldItem label="Website">
             {" "}
             <a
-              href="https://brainz-dev.com/#contact"
+              href="https://www.brainz-dev.com/#contact"
               target="_blank"
               rel="noopener noreferrer"
             >
-              https://brainz-dev.com/#contact
+              https://www.brainz-dev.com/#contact
             </a>
           </BoldItem>
         </div>

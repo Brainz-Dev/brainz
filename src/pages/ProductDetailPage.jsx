@@ -72,8 +72,8 @@ function ProductDetailPage() {
     description: product.tagline,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
-    url: `https://brainz-dev.com/products/${product.slug}`,
-    author: { "@id": "https://brainz-dev.com/#organization" },
+    url: `https://www.brainz-dev.com/products/${product.slug}`,
+    author: { "@id": "https://www.brainz-dev.com/#organization" },
     offers: {
       "@type": "Offer",
       availability: "https://schema.org/InStock",
@@ -87,7 +87,7 @@ function ProductDetailPage() {
         title={product.name}
         description={product.tagline}
         canonical={`/products/${product.slug}`}
-        image={product.icon ? `https://brainz-dev.com${product.icon}` : undefined}
+        image={product.icon ? `https://www.brainz-dev.com${product.icon}` : undefined}
         type="article"
         breadcrumbs={breadcrumbs}
         jsonLdExtra={jsonLd}

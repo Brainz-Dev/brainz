@@ -6,7 +6,7 @@
 
   <!-- Home -->
   <url>
-    <loc>https://brainz-dev.com/</loc>
+    <loc>https://www.brainz-dev.com/</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -14,7 +14,7 @@
 
   <!-- Products listing -->
   <url>
-    <loc>https://brainz-dev.com/products</loc>
+    <loc>https://www.brainz-dev.com/products</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -22,7 +22,7 @@
 
   <!-- Product detail: Insight Lens -->
   <url>
-    <loc>https://brainz-dev.com/products/insight-lens</loc>
+    <loc>https://www.brainz-dev.com/products/insight-lens</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -30,7 +30,7 @@
 
   <!-- Product detail: Zoho Books for Freshdesk -->
   <url>
-    <loc>https://brainz-dev.com/products/freshdesk-zoho-books</loc>
+    <loc>https://www.brainz-dev.com/products/freshdesk-zoho-books</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -38,7 +38,7 @@
 
   <!-- Product detail: Kanban Pro for Zoho Desk -->
   <url>
-    <loc>https://brainz-dev.com/products/kanban-pro</loc>
+    <loc>https://www.brainz-dev.com/products/kanban-pro</loc>
     <lastmod>2026-10-17</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -46,14 +46,14 @@
 
   <!-- Legal pages -->
   <url>
-    <loc>https://brainz-dev.com/privacy</loc>
+    <loc>https://www.brainz-dev.com/privacy</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
 
   <url>
-    <loc>https://brainz-dev.com/terms</loc>
+    <loc>https://www.brainz-dev.com/terms</loc>
     <lastmod>2026-06-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

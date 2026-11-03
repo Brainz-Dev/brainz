@@ -17,11 +17,11 @@ import ProductDetailPage from "./pages/ProductDetailPage";
 const homeJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "@id": "https://brainz-dev.com/#webpage",
-  "url": "https://brainz-dev.com/",
+  "@id": "https://www.brainz-dev.com/#webpage",
+  "url": "https://www.brainz-dev.com/",
   "name": "Brainz-Dev | SaaS Integration & Custom App Development",
-  "isPartOf": { "@id": "https://brainz-dev.com/#website" },
-  "about": { "@id": "https://brainz-dev.com/#organization" },
+  "isPartOf": { "@id": "https://www.brainz-dev.com/#website" },
+  "about": { "@id": "https://www.brainz-dev.com/#organization" },
   "description": "Brainz-Dev builds custom Freshdesk apps, Freshservice apps, Zoho Marketplace apps, SaaS integrations, and React/Node.js solutions. Ship production-ready software in 3 weeks.",
 };
 

@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet-async";
 
-const SITE_URL = "https://brainz-dev.com";
+const SITE_URL = "https://www.brainz-dev.com";
 const SITE_NAME = "Brainz-Dev";
 const DEFAULT_IMAGE = `${SITE_URL}/brainz.png`;
 const DEFAULT_DESCRIPTION =
